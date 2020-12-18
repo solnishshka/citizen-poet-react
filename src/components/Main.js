@@ -1,4 +1,5 @@
 import warningIcon from '../images/polygon.svg';
+import { Link } from 'react-router-dom';
 
 export default function Main(props) {
     return (
@@ -16,7 +17,7 @@ export default function Main(props) {
               подготовки и реализации соответствующий условий активизации.
             </p>
             <button type="button" className="lead__button">
-              <a href="#" className="lead__button-link">{'Выбрать категорию >>>'}</a>
+              <Link to="/categories" className="lead__button-link">{'Выбрать категорию >>>'}</Link>
             </button>
           </div>
           <div className="lead__right-column">
