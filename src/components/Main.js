@@ -1,3 +1,5 @@
+import warningIcon from '../images/polygon.svg';
+
 export default function Main(props) {
     return (
         <main className="content">
@@ -20,7 +22,7 @@ export default function Main(props) {
           <div className="lead__right-column">
             <div className="lead__title-item">
               <img
-                src="./images/Polygon 1.svg"
+                src={warningIcon}
                 alt=""
                 className="lead__warning-icon"
               />
