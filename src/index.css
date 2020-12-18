@@ -22,7 +22,6 @@
 @import url(./blocks/lead/__warning-icon/lead__warning-icon.css);
 @import url(./blocks/lead/__button-link/lead__button-link.css);
 @import url(./blocks/lead/__right-column/_theme/_about/lead__right-column_theme_about.css);
-@import url(./blocks/lead/__title-warning/_theme/_about/lead__title-warning_theme_about.css);
 @import url(./blocks/lead/__text-warning/_theme/_about/lead__text-warning_theme_about.css);
 @import url(./blocks/lead/__image/lead__image.css);
 
@@ -33,3 +32,14 @@
 @import url(./blocks/info/__title-item/info__title-item.css);
 @import url(./blocks/info/__title/_theme/_about/info__title_theme_about.css);
 @import url(./blocks/info/_theme/_about/info_theme_about.css);
+
+@import url(./blocks/table/table.css);
+
+@import url(./blocks/card/card.css);
+@import url(./blocks/card/__title-item/card__title-item.css);
+@import url(./blocks/card/__title/card__title.css);
+@import url(./blocks/card/__description/card__description.css);
+
+@import url(./blocks/qategories/qategories.css);
+@import url(./blocks/qategories/__link/qategories__link.css);
+@import url(./blocks/qategories/__title/qategories__title.css);

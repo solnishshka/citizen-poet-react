@@ -1,0 +1,10 @@
+.table{
+    display: grid;
+    grid-template-columns: repeat(2, 350px);
+    grid-template-rows: repeat(2, 200px);
+    column-gap: 90px;
+    row-gap: 72px;
+    margin: 0 auto;
+    max-width: 790px;
+    margin-top: 64px
+}

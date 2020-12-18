@@ -12,7 +12,7 @@ export default function Header(props) {
               <Link to="/about" className="header__menu-link">О ПОРТАЛЕ</Link>
             </li>
             <li className="header__menu-item">
-              <Link to="#" className="header__menu-link">КАТЕГОРИИ</Link>
+              <Link to="/categories" className="header__menu-link">КАТЕГОРИИ</Link>
             </li>
             <li className="header__menu-item">
               <Link to="#" className="header__menu-link">РЕЗУЛЬТАТЫ</Link>
