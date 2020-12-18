@@ -1,0 +1,5 @@
+.info_theme_about{
+    grid-template-columns: repeat(2, 285px);
+    gap: 95px;
+    margin-top: 50px;
+}
