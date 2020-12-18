@@ -1,0 +1,6 @@
+.header__right-column{
+    display: flex;
+    max-height: 56px;
+    justify-content: space-between;
+    align-items: center;
+}
