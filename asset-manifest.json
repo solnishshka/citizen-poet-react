@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/citizen-poet-react/static/css/main.c759d859.chunk.css",
-    "main.js": "/citizen-poet-react/static/js/main.9d43264f.chunk.js",
-    "main.js.map": "/citizen-poet-react/static/js/main.9d43264f.chunk.js.map",
+    "main.css": "/citizen-poet-react/static/css/main.e257b5c2.chunk.css",
+    "main.js": "/citizen-poet-react/static/js/main.1fb76824.chunk.js",
+    "main.js.map": "/citizen-poet-react/static/js/main.1fb76824.chunk.js.map",
     "runtime-main.js": "/citizen-poet-react/static/js/runtime-main.66603743.js",
     "runtime-main.js.map": "/citizen-poet-react/static/js/runtime-main.66603743.js.map",
-    "static/js/2.49ab0508.chunk.js": "/citizen-poet-react/static/js/2.49ab0508.chunk.js",
-    "static/js/2.49ab0508.chunk.js.map": "/citizen-poet-react/static/js/2.49ab0508.chunk.js.map",
+    "static/js/2.041709d5.chunk.js": "/citizen-poet-react/static/js/2.041709d5.chunk.js",
+    "static/js/2.041709d5.chunk.js.map": "/citizen-poet-react/static/js/2.041709d5.chunk.js.map",
     "static/js/3.0e32bcb9.chunk.js": "/citizen-poet-react/static/js/3.0e32bcb9.chunk.js",
     "static/js/3.0e32bcb9.chunk.js.map": "/citizen-poet-react/static/js/3.0e32bcb9.chunk.js.map",
     "index.html": "/citizen-poet-react/index.html",
-    "static/css/main.c759d859.chunk.css.map": "/citizen-poet-react/static/css/main.c759d859.chunk.css.map",
-    "static/js/2.49ab0508.chunk.js.LICENSE.txt": "/citizen-poet-react/static/js/2.49ab0508.chunk.js.LICENSE.txt",
+    "static/css/main.e257b5c2.chunk.css.map": "/citizen-poet-react/static/css/main.e257b5c2.chunk.css.map",
+    "static/js/2.041709d5.chunk.js.LICENSE.txt": "/citizen-poet-react/static/js/2.041709d5.chunk.js.LICENSE.txt",
     "static/media/logo.65e49422.svg": "/citizen-poet-react/static/media/logo.65e49422.svg",
     "static/media/polygon.2b34ffba.svg": "/citizen-poet-react/static/media/polygon.2b34ffba.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.66603743.js",
-    "static/js/2.49ab0508.chunk.js",
-    "static/css/main.c759d859.chunk.css",
-    "static/js/main.9d43264f.chunk.js"
+    "static/js/2.041709d5.chunk.js",
+    "static/css/main.e257b5c2.chunk.css",
+    "static/js/main.1fb76824.chunk.js"
   ]
 }
