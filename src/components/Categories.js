@@ -1,19 +1,20 @@
-import { Link } from "react-router-dom";
 import qImage from "../images/progress-bar-1.png";
 import house from "../images/house.png";
 import yard from "../images/yard.png";
 import road from "../images/road.png";
 import park from "../images/park.png";
 import Card from "../components/Card";
+import PageTemplate from "./PageTemplate";
 
 export default function Categories(props) {
   return (
     <section className="categories">
-      <Link className="categories__link" to="/">
-        Вернуться на главную
-      </Link>
-      <h1 className="categories__title">1. Выберите категорию проблемы</h1>
-      <img className="categories__progress-bar" src={qImage} alt="" />
+      <PageTemplate
+        navLink={"/"}
+        navLinkText={"Вернуться на главную"}
+        title={"1. Выберите категорию проблемы"}
+        progressBar={qImage}
+      />
       <div className="table">
         <Card
           cardTitle={"Дом"}
