@@ -13,27 +13,27 @@ export default function House(props) {
       />
       <div className="table table_theme_house">
         <Card
-          cardLink={"/categories/house/electro"}
+          cardLink={"/categories/house/problems"}
           cardTitle={"Электричество"}
         ></Card>
         <Card
-          cardLink={"/categories/house/electro"}
+          cardLink={"/categories/house/problems"}
           cardTitle={"Ремонт"}
         ></Card>
         <Card
-          cardLink={"/categories/house/electro"}
+          cardLink={"/categories/house/problems"}
           cardTitle={"Тепло- и водоснабжение"}
         ></Card>
         <Card
-          cardLink={"/categories/house/electro"}
+          cardLink={"/categories/house/problems"}
           cardTitle={"Управление домом"}
         ></Card>
         <Card
-          cardLink={"/categories/house/electro"}
+          cardLink={"/categories/house/problems"}
           cardTitle={"Техническое содержание"}
         ></Card>
         <Card
-          cardLink={"/categories/house/electro"}
+          cardLink={"/categories/house/problems"}
           cardTitle={"Уборка"}
         ></Card>
       </div>

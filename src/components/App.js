@@ -24,7 +24,7 @@ function App() {
         <Route exact path="/categories/house">
           <House />
         </Route>
-        <Route path="/categories/house/electro">
+        <Route path="/categories/house/problems">
           <Problems />
         </Route>
       </div>
