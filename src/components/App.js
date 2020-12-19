@@ -4,6 +4,8 @@ import Header from "./Header";
 import Main from "./Main";
 import About from './About';
 import Categories from './Categories';
+import House from './House';
+import Problems from './Problems';
 
 function App() {
   return (
@@ -16,8 +18,14 @@ function App() {
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/categories">
+        <Route exact path="/categories">
           <Categories />
+        </Route>
+        <Route exact path="/categories/house">
+          <House />
+        </Route>
+        <Route path="/categories/house/electro">
+          <Problems />
         </Route>
       </div>
     </div>

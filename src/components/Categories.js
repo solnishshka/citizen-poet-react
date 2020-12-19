@@ -17,6 +17,7 @@ export default function Categories(props) {
       />
       <div className="table">
         <Card
+          cardLink={"/categories/house"}
           cardTitle={"Дом"}
           cardImage={house}
           cardText={

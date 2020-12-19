@@ -34,6 +34,7 @@
 @import url(./blocks/info/_theme/_about/info_theme_about.css);
 
 @import url(./blocks/table/table.css);
+@import url(./blocks/table/_theme/_house/table_theme_house.css);
 
 @import url(./blocks/card/card.css);
 @import url(./blocks/card/__title-item/card__title-item.css);

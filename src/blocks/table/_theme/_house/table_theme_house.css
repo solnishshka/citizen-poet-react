@@ -1,0 +1,6 @@
+.table_theme_house{
+    grid-template-columns: repeat(3, 350px);
+    row-gap: 64px;
+    column-gap: 30px;
+    max-width: 1110px;
+}
