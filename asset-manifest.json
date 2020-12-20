@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/citizen-poet-react/static/css/main.83be6838.chunk.css",
-    "main.js": "/citizen-poet-react/static/js/main.79995944.chunk.js",
-    "main.js.map": "/citizen-poet-react/static/js/main.79995944.chunk.js.map",
+    "main.js": "/citizen-poet-react/static/js/main.f352d23d.chunk.js",
+    "main.js.map": "/citizen-poet-react/static/js/main.f352d23d.chunk.js.map",
     "runtime-main.js": "/citizen-poet-react/static/js/runtime-main.7e44c962.js",
     "runtime-main.js.map": "/citizen-poet-react/static/js/runtime-main.7e44c962.js.map",
     "static/js/2.0b85baf6.chunk.js": "/citizen-poet-react/static/js/2.0b85baf6.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.7e44c962.js",
     "static/js/2.0b85baf6.chunk.js",
     "static/css/main.83be6838.chunk.css",
-    "static/js/main.79995944.chunk.js"
+    "static/js/main.f352d23d.chunk.js"
   ]
 }
