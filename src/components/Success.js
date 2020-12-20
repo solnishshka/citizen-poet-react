@@ -1,5 +1,5 @@
 import PageTemplate from "./PageTemplate";
-import qImage from "../images/progress-bar-4.png";
+import qImage from "../images/progress-bar-5.png";
 import { Link } from "react-router-dom";
 
 export default function Success(props) {
