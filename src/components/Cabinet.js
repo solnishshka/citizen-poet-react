@@ -6,8 +6,8 @@ export default function Cabinet(props) {
             <h2 className="form__title">Добро пожаловать!</h2>
             <p className="form__description">Укажите свои настоящие имя и фамилию</p>
             <div className="form__input-items">
-                <p><label className="form__input-label">Имя</label><p><input className="form__input form__input_theme_name" name="userName" placeholder="Иван"/></p></p>
-                <p><label className="form__input-label">Фамилия</label><p> <input className="form__input form__input_theme_name" name="userSurname" placeholder="Иванов"/></p></p>
+                <p className="form__item"><label className="form__input-label">Имя</label><p className="form__item"><input className="form__input form__input_theme_name" name="userName" placeholder="Иван"/></p></p>
+                <p className="form__item"><label className="form__input-label">Фамилия</label><p className="form__item"> <input className="form__input form__input_theme_name" name="userSurname" placeholder="Иванов"/></p></p>
             </div>           
             <p><label className="form__input-label">Контактный e-mail</label></p><p><input className="form__input" name="email" placeholder="email@yandex.ru"/></p>
             <button className="form__button" type="submit">Зарегистрироваться</button>
