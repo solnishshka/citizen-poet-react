@@ -2,24 +2,24 @@ import icon from "../images/form-icon.png";
 
 export default function Cabinet(props) {
   return (
-    <form className="form" name="register-form">
+    <form className="form form_type_register" name="register-form">
       <h2 className="form__title">Добро пожаловать!</h2>
       <p className="form__description">Укажите свои настоящие имя и фамилию</p>
       <div className="form__input-items">
-        <label className="form__input-label" htmlFor="userName">
+        <label className="form__input-label form__input-label_type_register" htmlFor="userName">
           Имя
           <input
-            className="form__input form__input_theme_name"
+            className="form__input form__input_type_name"
             type="text"
             name="userName"
             placeholder="Иван"
             id="userName"
           />
         </label>
-        <label className="form__input-label" htmlFor="userSurname">
+        <label className="form__input-label form__input-label_type_register" htmlFor="userSurname">
           Фамилия
           <input
-            className="form__input form__input_theme_name"
+            className="form__input form__input_type_name"
             type="text"
             name="userSurname"
             placeholder="Иванов"
@@ -28,7 +28,7 @@ export default function Cabinet(props) {
         </label>
       </div>
       <label
-        className="form__input-label form__input-label_theme_email"
+        className="form__input-label form__input-label_type_email form__input-label_type_register"
         htmlFor="userEmail"
       >
         Контактный e-mail

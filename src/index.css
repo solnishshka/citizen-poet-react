@@ -67,12 +67,23 @@
 
 @import url(./blocks/form/__item/form__item.css);
 @import url(./blocks/form/form.css);
+@import url(./blocks/form/_type/_register/form_type_register.css);
+@import url(./blocks/form/_type/_adress/form_type_adress.css);
 @import url(./blocks/form/__title/form__title.css);
 @import url(./blocks/form/__description/form__description.css);
+@import url(./blocks/form/__fieldset/form__fieldset.css);
+@import url(./blocks/form/__household-align/form__household-align.css);
 @import url(./blocks/form/__input/form__input.css);
 @import url(./blocks/form/__input-items/form__input-items.css);
-@import url(./blocks/form/__input/_theme/_name/form__input_theme_name.css);
+@import url(./blocks/form/__input/_type/_area/form__input_type_area.css);
+@import url(./blocks/form/__input/_type/_comments/form__input_type_comments.css);
+@import url(./blocks/form/__input/_type/_corp/form__input_type_corp.css);
+@import url(./blocks/form/__input/_type/_entrance/form__input_type_entrance.css);
+@import url(./blocks/form/__input/_type/_name/form__input_type_name.css);
+@import url(./blocks/form/__input/_type/_street/form__input_type_street.css);
+@import url(./blocks/form/__input/_type/_building/form__input_type_building.css);
 @import url(./blocks/form/__input-label/form__input-label.css);
 @import url(./blocks/form/__text/form__text.css);
 @import url(./blocks/form/__image/form__image.css);
-@import url(./blocks/form/__input-label/_theme/_email/form__input-label_theme_email.css);
+@import url(./blocks/form/__input-label/_type/_email/form__input-label_type_email.css);
+@import url(./blocks/form/__input-label/_type/register/form__input-label_type_register.css);
