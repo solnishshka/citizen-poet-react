@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/citizen-poet-react/static/css/main.223132cd.chunk.css",
-    "main.js": "/citizen-poet-react/static/js/main.e16277c7.chunk.js",
-    "main.js.map": "/citizen-poet-react/static/js/main.e16277c7.chunk.js.map",
-    "runtime-main.js": "/citizen-poet-react/static/js/runtime-main.7e44c962.js",
-    "runtime-main.js.map": "/citizen-poet-react/static/js/runtime-main.7e44c962.js.map",
-    "static/js/2.36a71d7f.chunk.js": "/citizen-poet-react/static/js/2.36a71d7f.chunk.js",
-    "static/js/2.36a71d7f.chunk.js.map": "/citizen-poet-react/static/js/2.36a71d7f.chunk.js.map",
-    "static/js/3.04273d89.chunk.js": "/citizen-poet-react/static/js/3.04273d89.chunk.js",
-    "static/js/3.04273d89.chunk.js.map": "/citizen-poet-react/static/js/3.04273d89.chunk.js.map",
+    "main.css": "/citizen-poet-react/static/css/main.5ea75788.chunk.css",
+    "main.js": "/citizen-poet-react/static/js/main.1b04f7c7.chunk.js",
+    "main.js.map": "/citizen-poet-react/static/js/main.1b04f7c7.chunk.js.map",
+    "runtime-main.js": "/citizen-poet-react/static/js/runtime-main.66603743.js",
+    "runtime-main.js.map": "/citizen-poet-react/static/js/runtime-main.66603743.js.map",
+    "static/js/2.4400579f.chunk.js": "/citizen-poet-react/static/js/2.4400579f.chunk.js",
+    "static/js/2.4400579f.chunk.js.map": "/citizen-poet-react/static/js/2.4400579f.chunk.js.map",
+    "static/js/3.0e32bcb9.chunk.js": "/citizen-poet-react/static/js/3.0e32bcb9.chunk.js",
+    "static/js/3.0e32bcb9.chunk.js.map": "/citizen-poet-react/static/js/3.0e32bcb9.chunk.js.map",
     "index.html": "/citizen-poet-react/index.html",
-    "static/css/main.223132cd.chunk.css.map": "/citizen-poet-react/static/css/main.223132cd.chunk.css.map",
-    "static/js/2.36a71d7f.chunk.js.LICENSE.txt": "/citizen-poet-react/static/js/2.36a71d7f.chunk.js.LICENSE.txt",
+    "static/css/main.5ea75788.chunk.css.map": "/citizen-poet-react/static/css/main.5ea75788.chunk.css.map",
+    "static/js/2.4400579f.chunk.js.LICENSE.txt": "/citizen-poet-react/static/js/2.4400579f.chunk.js.LICENSE.txt",
     "static/media/logo.65e49422.svg": "/citizen-poet-react/static/media/logo.65e49422.svg",
     "static/media/polygon.2b34ffba.svg": "/citizen-poet-react/static/media/polygon.2b34ffba.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.7e44c962.js",
-    "static/js/2.36a71d7f.chunk.js",
-    "static/css/main.223132cd.chunk.css",
-    "static/js/main.e16277c7.chunk.js"
+    "static/js/runtime-main.66603743.js",
+    "static/js/2.4400579f.chunk.js",
+    "static/css/main.5ea75788.chunk.css",
+    "static/js/main.1b04f7c7.chunk.js"
   ]
 }
