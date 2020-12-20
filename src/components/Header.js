@@ -29,9 +29,9 @@ export default function Header(props) {
       </nav>
       <div className="header__right-column">
         <img src={searchIcon} alt="" className="header__search-icon" />
-        <a href="#" className="header__link">
+        <Link to="/cabinet" className="header__link">
           МОЙ КАБИНЕТ
-        </a>
+        </Link>
         <Link to="/categories">
           <button type="button" className="header__button">
             СОЗДАТЬ ОБРАЩЕНИЕ

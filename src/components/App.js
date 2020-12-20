@@ -9,6 +9,7 @@ import Electro from './Electro';
 import Repair from './Repair';
 import Mesto from './Mesto';
 import Success from './Success';
+import Cabinet from './Cabinet';
 
 function App() {
   return (
@@ -38,6 +39,9 @@ function App() {
         </Route>
         <Route path="/success">
           <Success />
+        </Route>
+        <Route path="/cabinet">
+          <Cabinet />
         </Route>
       </div>
     </div>
