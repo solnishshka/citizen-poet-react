@@ -26,7 +26,7 @@ export default function Electro(props) {
     <section className="categories">
       <PageTemplate
         navLink={"/categories/house"}
-        navLinkText={"Назад"}
+        navLinkText={"Назад к списку проблем"}
         title={"3. Выберите описание проблемы"}
         progressBar={qImage}
       />
