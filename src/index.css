@@ -87,3 +87,5 @@
 @import url(./blocks/form/__image/form__image.css);
 @import url(./blocks/form/__input-label/_type/_email/form__input-label_type_email.css);
 @import url(./blocks/form/__input-label/_type/register/form__input-label_type_register.css);
+
+@import url(./blocks/not-found/not-found.css);

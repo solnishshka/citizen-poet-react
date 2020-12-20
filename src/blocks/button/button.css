@@ -1,6 +1,7 @@
 .button{
     width: 245px;
     height: 45px;
+    cursor: pointer;
 }
 
 .button:focus{
