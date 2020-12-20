@@ -1,0 +1,6 @@
+.form__input-items{
+    display: flex;
+    max-width: 350px;
+    justify-content: space-between;
+    margin: 0 auto;
+}
