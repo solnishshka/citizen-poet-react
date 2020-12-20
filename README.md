@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Проект Активный гражданин поэт
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Сервис разработан в рамках зимнего хакатона Яндекс.Практикума
+
+## Описание
+Проект для отправки обращений с жалобами на проблемы города в стихотворной форме.
 
 ## Available Scripts
 
