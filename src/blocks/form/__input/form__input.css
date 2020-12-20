@@ -1,0 +1,7 @@
+.form__input{
+    border: 0.5px solid black;
+    border-radius: 2px;
+    width: 350px;
+    height: 25px;
+    margin-top: 10px;
+}

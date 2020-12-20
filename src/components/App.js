@@ -1,15 +1,15 @@
-import './App.css';
-import { Route } from 'react-router-dom';
+import "./App.css";
+import { Route } from "react-router-dom";
 import Header from "./Header";
 import Main from "./Main";
-import About from './About';
-import Categories from './Categories';
-import House from './House';
-import Electro from './Electro';
-import Repair from './Repair';
-import Mesto from './Mesto';
-import Success from './Success';
-import Cabinet from './Cabinet';
+import About from "./About";
+import Categories from "./Categories";
+import House from "./House";
+import Electro from "./Electro";
+import Repair from "./Repair";
+import Mesto from "./Mesto";
+import Success from "./Success";
+import Cabinet from "./Cabinet";
 
 function App() {
   return (
