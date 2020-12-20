@@ -5,7 +5,8 @@ import Main from "./Main";
 import About from './About';
 import Categories from './Categories';
 import House from './House';
-import Problems from './Problems';
+import Electro from './Electro';
+import Repair from './Repair';
 
 function App() {
   return (
@@ -24,8 +25,11 @@ function App() {
         <Route exact path="/categories/house">
           <House />
         </Route>
-        <Route path="/categories/house/problems">
-          <Problems />
+        <Route path="/categories/house/electro">
+          <Electro />
+        </Route>
+        <Route path="/categories/house/repair">
+          <Repair />
         </Route>
       </div>
     </div>

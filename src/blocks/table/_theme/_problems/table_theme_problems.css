@@ -1,0 +1,7 @@
+.table_theme_problems{
+    grid-template-columns: repeat(3, 350px);
+    grid-template-rows: repeat(auto, 200px);
+    row-gap: 64px;
+    column-gap: 30px;
+    max-width: 1110px;
+}

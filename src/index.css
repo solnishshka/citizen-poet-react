@@ -35,11 +35,16 @@
 
 @import url(./blocks/table/table.css);
 @import url(./blocks/table/_theme/_house/table_theme_house.css);
+@import url(./blocks/table/_theme/_problems/table_theme_problems.css);
 
 @import url(./blocks/card/card.css);
 @import url(./blocks/card/__title-item/card__title-item.css);
 @import url(./blocks/card/__title/card__title.css);
 @import url(./blocks/card/__description/card__description.css);
+@import url(./blocks/card/__description/_theme/_problems/card__description_theme_problems.css);
+@import url(./blocks/card/__description/_theme/_quotes/card__description_theme_quotes.css);
+@import url(./blocks/card/_active/card_active.css);
+@import url(./blocks/card/__description/_active/card__description_active.css);
 
 @import url(./blocks/categories/categories.css);
 @import url(./blocks/categories/__link/categories__link.css);

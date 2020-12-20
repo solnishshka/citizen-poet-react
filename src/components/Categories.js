@@ -17,29 +17,33 @@ export default function Categories(props) {
       />
       <div className="table">
         <Card
+          className={"card__description"}
           cardLink={"/categories/house"}
           cardTitle={"Дом"}
           cardImage={house}
-          cardText={
+          cardText_1={
             "Управление, уборка, ремонт, электричество, тепло- и водоснабжение"
           }
         />
         <Card
+          className={"card__description"}
           cardTitle={"Двор"}
           cardImage={yard}
-          cardText={
+          cardText_1={
             "Благоустройство, зеленые насаждения, проезды, тротуары, парковка, уборка"
           }
         />
         <Card
+          className={"card__description"}
           cardTitle={"Дорога"}
           cardImage={road}
-          cardText={"Инфраструктура, дорожное покрытие, пешеходные переходы"}
+          cardText_1={"Инфраструктура, дорожное покрытие, пешеходные переходы"}
         />
         <Card
+          className={"card__description"}
           cardTitle={"Парк"}
           cardImage={park}
-          cardText={
+          cardText_1={
             "Досуг, освещение, торговля и реклама, уборка, инфраструктура"
           }
         />
