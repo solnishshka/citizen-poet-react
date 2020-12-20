@@ -1,0 +1,8 @@
+.button{
+    width: 245px;
+    height: 45px;
+}
+
+.button:focus{
+    outline: none;
+}

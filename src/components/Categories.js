@@ -17,6 +17,7 @@ export default function Categories(props) {
       />
       <div className="table">
         <Card
+          titleItemClass={"card__title-item card__title-item_theme_categories"}
           className={"card__description"}
           cardLink={"/categories/house"}
           cardTitle={"Дом"}
@@ -26,6 +27,7 @@ export default function Categories(props) {
           }
         />
         <Card
+          titleItemClass={"card__title-item card__title-item_theme_categories"}
           className={"card__description"}
           cardTitle={"Двор"}
           cardImage={yard}
@@ -34,12 +36,14 @@ export default function Categories(props) {
           }
         />
         <Card
+          titleItemClass={"card__title-item card__title-item_theme_categories"}
           className={"card__description"}
           cardTitle={"Дорога"}
           cardImage={road}
           cardText_1={"Инфраструктура, дорожное покрытие, пешеходные переходы"}
         />
         <Card
+          titleItemClass={"card__title-item card__title-item_theme_categories"}
           className={"card__description"}
           cardTitle={"Парк"}
           cardImage={park}

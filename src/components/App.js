@@ -7,6 +7,8 @@ import Categories from './Categories';
 import House from './House';
 import Electro from './Electro';
 import Repair from './Repair';
+import Mesto from './Mesto';
+import Success from './Success';
 
 function App() {
   return (
@@ -30,6 +32,12 @@ function App() {
         </Route>
         <Route path="/categories/house/repair">
           <Repair />
+        </Route>
+        <Route path="/mesto">
+          <Mesto />
+        </Route>
+        <Route path="/success">
+          <Success />
         </Route>
       </div>
     </div>

@@ -16,7 +16,7 @@ export default function Card(props) {
   return (
     <>
       <Link to={props.cardLink} className={isActive ? "card card_active" : "card"} onClick={handleClickCard}>
-        <div className="card__title-item">
+        <div className={props.titleItemClass ? props.titleItemClass : "card__title-item"}>
           <h2 className="card__title">{props.cardTitle}</h2>
           <img className="card__image" src={props.cardImage} alt="" />
         </div>
