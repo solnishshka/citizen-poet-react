@@ -29,6 +29,7 @@ export default function Categories(props) {
         <Card
           titleItemClass={"card__title-item card__title-item_theme_categories"}
           className={"card__description"}
+          cardLink={"/categories/yard"}
           cardTitle={"Двор"}
           cardImage={yard}
           cardText_1={
@@ -38,6 +39,7 @@ export default function Categories(props) {
         <Card
           titleItemClass={"card__title-item card__title-item_theme_categories"}
           className={"card__description"}
+          cardLink={"/categories/road"}
           cardTitle={"Дорога"}
           cardImage={road}
           cardText_1={"Инфраструктура, дорожное покрытие, пешеходные переходы"}
@@ -45,6 +47,7 @@ export default function Categories(props) {
         <Card
           titleItemClass={"card__title-item card__title-item_theme_categories"}
           className={"card__description"}
+          cardLink={"/categories/park"}
           cardTitle={"Парк"}
           cardImage={park}
           cardText_1={
