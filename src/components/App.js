@@ -28,13 +28,13 @@ function App() {
           <Route exact path="/categories/:name">
             <Subcategories />
           </Route>
-          <Route path="/categories/:name/:title">
+          <Route exact path="/categories/:name/:title">
             <Problems />
           </Route>
-          <Route path="/mesto">
+          <Route exact path="/categories/:name/:title/mesto">
             <Mesto />
           </Route>
-          <Route path="/success">
+          <Route path="/categories/:name/:title/mesto/success">
             <Success />
           </Route>
           <Route path="/cabinet">

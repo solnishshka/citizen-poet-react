@@ -1,13 +1,24 @@
 import PageTemplate from "./PageTemplate";
 import qImage from "../images/progress-bar-5.png";
-import { Link } from "react-router-dom";
+import { Link, useRouteMatch, useParams } from "react-router-dom";
+import config from "../utils/data";
 
 export default function Success(props) {
+  const { url } = useRouteMatch();
+  const { name, title } = useParams();
+
   return (
     <section className="categories">
       <PageTemplate
-        navLink={"/categories/house/electro"}
-        navLinkText={"Вернуться к описанию"}
+        navLinkText={[
+          "Вернуться на главную",
+          "Категории",
+          config.filter((item) => item.name === name)[0].title,
+          config
+            .filter((item) => item.name === name)[0]
+            .subcategories.filter((item) => item.name === title)[0].title,
+          "Адрес", "Сообщение отправлено"
+        ]}
         title={"Обращение успешно отправлено!"}
         progressBar={qImage}
       />

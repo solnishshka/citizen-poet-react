@@ -50,6 +50,7 @@
 @import url(./blocks/categories/categories.css);
 @import url(./blocks/categories/__link/categories__link.css);
 @import url(./blocks/categories/__link/_active/categories__link_active.css);
+@import url(./blocks/categories/__link/_inactive/categories__link_inactive.css);
 @import url(./blocks/categories/__title/categories__title.css);
 
 @import url(./blocks/page-container/__link/page-container__link.css);

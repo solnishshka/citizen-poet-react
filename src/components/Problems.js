@@ -8,7 +8,7 @@ import { useRouteMatch, useParams  } from "react-router-dom";
 
 export default function Problems(props) {
   const [qoutes, setQuotes] = React.useState([]);
-  const [texts, setTexts] = React.useState([]);
+  const {url} = useRouteMatch();
   const { name, title } = useParams();
   const query = config.filter(item => item.name === name)[0].subcategories.filter(item => item.name === title)[0].query;
 
@@ -68,7 +68,7 @@ export default function Problems(props) {
         ))}
       </div>
       <div className="button-items">
-        <Link to="/mesto">
+        <Link to={`${url}/mesto`}>
           <button className="button button_theme_apply">Подтвердить</button>
         </Link>
         <button className="button button_theme_update">

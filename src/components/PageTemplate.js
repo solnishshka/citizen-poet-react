@@ -6,7 +6,6 @@ export default function PageTemplate(props) {
   return (
     <div className="page-container">
       <Breadcrumbs url={url} title={props.navLinkText}/>
-
       <h1 className="page-container__title">{props.title}</h1>
       <img
         className="page-container__progress-bar"

@@ -19,13 +19,36 @@ export default function Breadcrumbs(props) {
       }
     });
 
-  return (
-    <>
-      {crumbs.map((url, i) => (
-        <Link className={i === crumbs.length - 1 ? "categories__link categories__link_active" : "categories__link"} key={i} to={url}>
-          {props.title[i]}
-        </Link>
-      ))}
-    </>
-  );
+  console.log(crumbs);
+  if (props.url.includes("mesto")) {
+    return (
+      <Link className="categories__link" to={crumbs[crumbs.length - 2]}>
+        Вернуться к описанию
+      </Link>
+    );
+  } else if (props.url.includes("success")) {
+    return (
+      <Link className="categories__link" to={crumbs[crumbs.length - 3]}>
+        Вернуться к описанию
+      </Link>
+    );
+  } else {
+    return (
+      <>
+        {crumbs.map((url, i) => (
+          <Link
+            className={
+              i === crumbs.length - 1
+                ? "categories__link categories__link_active"
+                : "categories__link categories__link_inactive"
+            }
+            key={i}
+            to={url}
+          >
+            {props.title[i]}
+          </Link>
+        ))}
+      </>
+    );
+  }
 }
