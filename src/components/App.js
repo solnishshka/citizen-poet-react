@@ -1,18 +1,14 @@
-import { Route, Switch } from "react-router-dom";
 import Header from "./Header";
 import Main from "./Main";
 import About from "./About";
 import Categories from "./Categories";
-import House from "./House";
-import Electro from "./Electro";
-import Repair from "./Repair";
+import Problems from "./Problems";
 import Mesto from "./Mesto";
 import Success from "./Success";
 import Cabinet from "./Cabinet";
-import Yard from "./Yard";
 import PageNotFound from "./PageNotFound";
-import Road from "./Road";
-import Park from "./Park";
+import Subcategories from "./Subcategories";
+import { Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -29,23 +25,11 @@ function App() {
           <Route exact path="/categories">
             <Categories />
           </Route>
-          <Route exact path="/categories/house">
-            <House />
+          <Route exact path="/categories/:name">
+            <Subcategories />
           </Route>
-          <Route exact path="/categories/yard">
-            <Yard />
-          </Route>
-          <Route exact path="/categories/road">
-            <Road />
-          </Route>
-          <Route exact path="/categories/park">
-            <Park />
-          </Route>
-          <Route path="/categories/house/electro">
-            <Electro />
-          </Route>
-          <Route path="/categories/house/repair">
-            <Repair />
+          <Route path="/categories/:name/:title">
+            <Problems />
           </Route>
           <Route path="/mesto">
             <Mesto />

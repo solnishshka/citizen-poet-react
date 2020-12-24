@@ -2,15 +2,31 @@ import PageTemplate from "./PageTemplate";
 import qImage from "../images/progress-bar-2.png";
 import Card from "./Card";
 import config from "../utils/data";
+import { useRouteMatch, useParams  } from "react-router-dom";
 
-export default function Road(props) {
-  const id = 2;
-  
+export default function Subcategories(props) {
+  const { url } = useRouteMatch();
+  const { name } = useParams();
+  let id = 0;
+  switch (name) {
+    case 'yard' :
+      id = 1;
+      break;
+    case 'road' :
+      id = 2;
+      break;
+    case 'park' :
+      id = 3;
+      break;
+    default :
+      id = 0;
+  }
+
   return (
     <section className="categories">
       <PageTemplate
         navLink={"/categories"}
-        navLinkText={"Категории"}
+        navLinkText={["Вернуться на главную", "Категории", `${config.filter(item => item.name === name)[0].title}`]}
         title={"2. Уточните проблему"}
         progressBar={qImage}
       />
@@ -18,7 +34,7 @@ export default function Road(props) {
         {config[id].subcategories.map((card) => (
           <Card
             className={"card__description card__description_theme_problems"}
-            cardLink={`/categories/road/${card.name}`}
+            cardLink={`${url}/${card.name}`}
             cardTitle={card.title}
             cardText={card.description}
             key={card.id}

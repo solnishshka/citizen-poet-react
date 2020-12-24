@@ -4,11 +4,13 @@ import PageTemplate from "./PageTemplate";
 import config from "../utils/data";
 
 export default function Categories(props) {
+  const crumbs = ["Вернуться на главную", "Категории"]
+
   return (
     <section className="categories">
       <PageTemplate
         navLink={"/"}
-        navLinkText={"Вернуться на главную"}
+        navLinkText={crumbs}
         title={"1. Выберите категорию проблемы"}
         progressBar={qImage}
       />

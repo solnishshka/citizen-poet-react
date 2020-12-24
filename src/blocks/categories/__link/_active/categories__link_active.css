@@ -1,0 +1,7 @@
+.categories__link_active{
+    opacity: 1;
+}
+
+.categories__link_active::after{
+    content: none;
+}
