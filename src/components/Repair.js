@@ -33,12 +33,10 @@ export default function Electro(props) {
       <div className="table table_theme_problems">
         {qoutes.map((item, i) => (
           <Card
+            cardLink="#"
             key={i}
             className={"card__description card__description_theme_quotes"}
-            cardText_1={item.fields.text.split("\n")[2]}
-            cardText_2={item.fields.text.split("\n")[3]}
-            cardText_3={item.fields.text.split("\n")[4]}
-            cardText_4={item.fields.text.split("\n")[5]}
+            cardText={[]}
           />
         ))}
       </div>

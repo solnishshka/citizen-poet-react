@@ -9,7 +9,10 @@ import Repair from "./Repair";
 import Mesto from "./Mesto";
 import Success from "./Success";
 import Cabinet from "./Cabinet";
+import Yard from "./Yard";
 import PageNotFound from "./PageNotFound";
+import Road from "./Road";
+import Park from "./Park";
 
 function App() {
   return (
@@ -28,6 +31,15 @@ function App() {
           </Route>
           <Route exact path="/categories/house">
             <House />
+          </Route>
+          <Route exact path="/categories/yard">
+            <Yard />
+          </Route>
+          <Route exact path="/categories/road">
+            <Road />
+          </Route>
+          <Route exact path="/categories/park">
+            <Park />
           </Route>
           <Route path="/categories/house/electro">
             <Electro />

@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export default function Card(props) {
   const [isActive, setActive] = useState(false);
+  const cardText = props.cardText;
 
   function handleClickCard() {
     if (isActive) {
@@ -27,42 +28,15 @@ export default function Card(props) {
           <h2 className="card__title">{props.cardTitle}</h2>
           <img className="card__image" src={props.cardImage} alt="" />
         </div>
-        <p
-          className={
-            isActive
-              ? props.className + " card__description_active"
-              : props.className
-          }
-        >
-          {props.cardText_1}
-        </p>
-        <p
-          className={
-            isActive
-              ? props.className + " card__description_active"
-              : props.className
-          }
-        >
-          {props.cardText_2}
-        </p>
-        <p
-          className={
-            isActive
-              ? props.className + " card__description_active"
-              : props.className
-          }
-        >
-          {props.cardText_3}
-        </p>
-        <p
-          className={
-            isActive
-              ? props.className + " card__description_active"
-              : props.className
-          }
-        >
-          {props.cardText_4}
-        </p>
+        {cardText ? (
+          cardText.map((text, i) => (
+            <p className={props.className} key={i}>
+              {text}
+            </p>
+          ))
+        ) : (
+          <p></p>
+        )}
       </Link>
     </>
   );

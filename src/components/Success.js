@@ -8,7 +8,7 @@ export default function Success(props) {
       <PageTemplate
         navLink={"/categories/house/electro"}
         navLinkText={"Вернуться к описанию"}
-        title={"5. Ваше сообщение успешно отправлено"}
+        title={"Обращение успешно отправлено!"}
         progressBar={qImage}
       />
       <div className="success">

@@ -3,9 +3,9 @@ import qImage from "../images/progress-bar-2.png";
 import Card from "./Card";
 import config from "../utils/data";
 
-export default function House(props) {
-  const id = 0;
-
+export default function Road(props) {
+  const id = 2;
+  
   return (
     <section className="categories">
       <PageTemplate
@@ -18,7 +18,7 @@ export default function House(props) {
         {config[id].subcategories.map((card) => (
           <Card
             className={"card__description card__description_theme_problems"}
-            cardLink={`/categories/house/${card.name}`}
+            cardLink={`/categories/road/${card.name}`}
             cardTitle={card.title}
             cardText={card.description}
             key={card.id}
