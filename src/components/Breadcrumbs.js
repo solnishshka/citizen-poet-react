@@ -19,16 +19,15 @@ export default function Breadcrumbs(props) {
       }
     });
 
-  console.log(crumbs);
-  if (props.url.includes("mesto")) {
+  if (props.url.includes("success")) {
     return (
-      <Link className="categories__link" to={crumbs[crumbs.length - 2]}>
+      <Link className="breadcrumbs" to={crumbs[crumbs.length - 3]}>
         Вернуться к описанию
       </Link>
     );
-  } else if (props.url.includes("success")) {
+  } else if (props.url.includes("mesto")) {
     return (
-      <Link className="categories__link" to={crumbs[crumbs.length - 3]}>
+      <Link className="breadcrumbs" to={crumbs[crumbs.length - 2]}>
         Вернуться к описанию
       </Link>
     );
@@ -39,8 +38,8 @@ export default function Breadcrumbs(props) {
           <Link
             className={
               i === crumbs.length - 1
-                ? "categories__link categories__link_active"
-                : "categories__link categories__link_inactive"
+                ? "breadcrumbs breadcrumbs_active"
+                : "breadcrumbs breadcrumbs_inactive"
             }
             key={i}
             to={url}

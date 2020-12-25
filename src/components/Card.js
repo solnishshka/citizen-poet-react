@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export default function Card(props) {
-  const [isActive, setActive] = useState(false);
-  const cardText = props.cardText;
+  const card = {
+    id : props.id,
+    text : props.cardText
+  };
 
   function handleClickCard() {
-    if (isActive) {
-      setActive(false);
-    } else {
-      setActive(true);
+    if (props.onClick) {
+      props.onClick(props.isActive, card.id, card.text);
     }
   }
 
@@ -17,7 +17,13 @@ export default function Card(props) {
     <>
       <Link
         to={props.cardLink}
-        className={isActive ? "card card_active" : "card"}
+        className={
+          props.cardClassName
+            ? props.isActive
+              ? "card card_active " + props.cardClassName
+              : "card " + props.cardClassName
+            : "card"
+        }
         onClick={handleClickCard}
       >
         <div
@@ -25,18 +31,24 @@ export default function Card(props) {
             props.titleItemClass ? props.titleItemClass : "card__title-item"
           }
         >
-          <h2 className="card__title">{props.cardTitle}</h2>
-          <img className="card__image" src={props.cardImage} alt="" />
+          {props.children}
         </div>
-        {cardText ? (
-          cardText.map((text, i) => (
-            <p className={props.className} key={i}>
-              {text}
-            </p>
-          ))
-        ) : (
-          <p></p>
-        )}
+          {card.text ? (
+            card.text.map((text, i) => (
+              <p
+                className={
+                  props.isActive
+                    ? `${props.className} + card__description_active`
+                    : props.className
+                }
+                key={i}
+              >
+                {text}
+              </p>
+            ))
+          ) : (
+            <p></p>
+          )}
       </Link>
     </>
   );

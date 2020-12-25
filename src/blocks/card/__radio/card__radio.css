@@ -1,0 +1,13 @@
+.card__radio{
+    display: none;
+}
+
+.card__radio:checked + .card{
+    background-image: url(../../../images/active-card-icon.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+.card__label{
+    cursor: pointer;
+}

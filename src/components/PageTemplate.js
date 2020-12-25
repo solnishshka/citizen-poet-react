@@ -4,14 +4,14 @@ import Breadcrumbs from './Breadcrumbs';
 export default function PageTemplate(props) {
   const { url } = useRouteMatch();
   return (
-    <div className="page-container">
+    <section className="intro">
       <Breadcrumbs url={url} title={props.navLinkText}/>
-      <h1 className="page-container__title">{props.title}</h1>
+      <h1 className="intro__title">{props.title}</h1>
       <img
-        className="page-container__progress-bar"
+        className="intro__progress-bar"
         src={props.progressBar}
-        alt=""
+        alt="Индикатор прогресса заполнения заявки"
       />
-    </div>
+    </section>
   );
 }

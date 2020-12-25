@@ -1,5 +1,6 @@
 @import url(./vendor/normalize.css);
 @import url(./blocks/root/root.css);
+@import url(./blocks/content/content.css);
 
 @import url(./blocks/header/header.css);
 @import url(./blocks/header/__menu-items/header__menu-items.css);
@@ -9,6 +10,10 @@
 @import url(./blocks/header/__link/header__link.css);
 @import url(./blocks/header/__button/header__button.css);
 @import url(./blocks/header/__right-column/header__right-column.css);
+
+@import url(./blocks/breadcrumbs/breadcrumbs.css);
+@import url(./blocks/breadcrumbs/_active/breadcrumbs_active.css);
+@import url(./blocks/breadcrumbs/_inactive/breadcrumbs_inactive.css);
 
 @import url(./blocks/lead/lead.css);
 @import url(./blocks/lead/__left-column/lead__left-column.css);
@@ -34,27 +39,22 @@
 @import url(./blocks/info/_theme/_about/info_theme_about.css);
 
 @import url(./blocks/table/table.css);
-@import url(./blocks/table/_theme/_house/table_theme_house.css);
-@import url(./blocks/table/_theme/_problems/table_theme_problems.css);
+@import url(./blocks/table/_theme/_subcategories/table_theme_subcategories.css);
+@import url(./blocks/table/_theme/_quotes/table_theme_quotes.css);
 
 @import url(./blocks/card/card.css);
+@import url(./blocks/card/_type/_quotes/card_type_quotes.css);
 @import url(./blocks/card/__title-item/card__title-item.css);
 @import url(./blocks/card/__title/card__title.css);
 @import url(./blocks/card/__description/card__description.css);
-@import url(./blocks/card/__description/_theme/_problems/card__description_theme_problems.css);
 @import url(./blocks/card/__description/_theme/_quotes/card__description_theme_quotes.css);
+@import url(./blocks/card/__description/_theme/_subcategories/card__description_theme_subcategories.css);
 @import url(./blocks/card/_active/card_active.css);
 @import url(./blocks/card/__description/_active/card__description_active.css);
 @import url(./blocks/card/__title-item/_theme_categories/card__title-item_theme_categories.css);
 
-@import url(./blocks/categories/categories.css);
-@import url(./blocks/categories/__link/categories__link.css);
-@import url(./blocks/categories/__link/_active/categories__link_active.css);
-@import url(./blocks/categories/__link/_inactive/categories__link_inactive.css);
-@import url(./blocks/categories/__title/categories__title.css);
-
-@import url(./blocks/page-container/__link/page-container__link.css);
-@import url(./blocks/page-container/__title/page-container__title.css);
+@import url(./blocks/intro/__link/intro__link.css);
+@import url(./blocks/intro/__title/intro__title.css);
 
 @import url(./blocks/button-items/button-items.css);
 @import url(./blocks/button/button.css);
@@ -94,5 +94,9 @@
 @import url(./blocks/form/__input/_type/_auth/form__input_type_auth.css);
 @import url(./blocks/form/_type/_authorized/form_type_authorized.css);
 @import url(./blocks/form/__title/_type/form__title_type_auth.css);
+@import url(./blocks/form/__input/_type/_error/form__input_type_error.css);
 
 @import url(./blocks/not-found/not-found.css);
+
+
+@import url(./blocks/card/__radio/card__radio.css);

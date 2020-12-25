@@ -7,14 +7,14 @@ export default function Categories(props) {
   const crumbs = ["Вернуться на главную", "Категории"]
 
   return (
-    <section className="categories">
+    <main className="content">
       <PageTemplate
         navLink={"/"}
         navLinkText={crumbs}
         title={"1. Выберите категорию проблемы"}
         progressBar={qImage}
       />
-      <div className="table">
+      <section className="table">
         {config.map((item) => (
           <Card
             titleItemClass={
@@ -27,9 +27,12 @@ export default function Categories(props) {
             cardText={item.description}
             card = {item}
             key = {item.id}
-          />
+          >
+            <h2 className="card__title">{item.title}</h2>
+          <img className="card__image" src={item.image} alt="" />
+          </Card>
         ))}
-      </div>
-    </section>
+      </section>
+    </main>
   );
 }

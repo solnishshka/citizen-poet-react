@@ -2,13 +2,13 @@ import Header from "./Header";
 import Main from "./Main";
 import About from "./About";
 import Categories from "./Categories";
-import Problems from "./Problems";
 import Mesto from "./Mesto";
 import Success from "./Success";
 import Cabinet from "./Cabinet";
 import PageNotFound from "./PageNotFound";
 import Subcategories from "./Subcategories";
 import { Switch, Route } from 'react-router-dom';
+import Quotes from "./Quotes";
 
 function App() {
   return (
@@ -29,9 +29,9 @@ function App() {
             <Subcategories />
           </Route>
           <Route exact path="/categories/:name/:title">
-            <Problems />
+            <Quotes />
           </Route>
-          <Route exact path="/categories/:name/:title/mesto">
+          <Route exact path="/categories/:name/:title/mesto" >
             <Mesto />
           </Route>
           <Route path="/categories/:name/:title/mesto/success">

@@ -8,7 +8,7 @@ export default function Success(props) {
   const { name, title } = useParams();
 
   return (
-    <section className="categories">
+    <main className="content">
       <PageTemplate
         navLinkText={[
           "Вернуться на главную",
@@ -39,6 +39,6 @@ export default function Success(props) {
           </Link>
         </div>
       </div>
-    </section>
+    </main>
   );
 }
