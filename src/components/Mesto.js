@@ -1,13 +1,15 @@
 import PageTemplate from "./PageTemplate";
 import qImage from "../images/progress-bar-4.png";
-import { Link, useRouteMatch, useParams, Redirect } from "react-router-dom";
+import { useRouteMatch, useParams, Redirect } from "react-router-dom";
 import config from "../utils/data";
 import { useEffect, useState, useCallback } from "react";
 
 export default function Mesto(props) {
-  const authorized = localStorage.getItem('authorized') ? JSON.parse(localStorage.getItem('authorized')) : false;
+  const authorized = localStorage.getItem("authorized")
+    ? JSON.parse(localStorage.getItem("authorized"))
+    : false;
   const { url } = useRouteMatch();
-  const { name, title } = useParams();
+  const { name, title, id } = useParams();
   const [formValues, setFormValues] = useState({
     username: "",
     surname: "",
@@ -21,10 +23,14 @@ export default function Mesto(props) {
   });
 
   const [isSubmit, setIsSubmit] = useState(false);
-  const [isValid, setIsValid] = useState({
-    streetIsValid: true,
-    buildingIsValid: true,
-  });
+  const [isValid, setIsValid] = useState(true);
+  const inputIsValid = {
+    isValidName: true,
+    isValidEmail: true,
+    isValidStreet: false,
+    isValidBuilding: false,
+    isValidCorp: false
+  };
 
   const handleInputChange = useCallback(
     (e) => {
@@ -37,16 +43,9 @@ export default function Mesto(props) {
   function handleSubmit(e) {
     e.preventDefault();
     setIsSubmit(true);
-    localStorage.setItem("adress", JSON.stringify(formValues));
+    formValues.username = localStorage.getItem('userName') ? localStorage.getItem('userName') : formValues.username;
+    localStorage.setItem(`adress-${id}`, JSON.stringify(formValues));
   }
-
-  useEffect(() => {
-    setIsValid({
-      streetIsValid:
-        formValues.street.length > 10 && formValues.street.length < 50,
-      buildingIsValid: typeof formValues.building === "number",
-    });
-  }, [formValues]);
 
   const {
     username,
@@ -59,9 +58,20 @@ export default function Mesto(props) {
     entrance,
     comments,
   } = formValues;
-  console.log(isSubmit);
-  console.log(isValid);
-  if (isSubmit && isValid) {
+
+  useEffect(() => {
+    inputIsValid.isValidStreet = formValues.street.length > 10 && formValues.street.length < 50;
+    inputIsValid.isValidCorp = formValues.corp > 0 && formValues.corp < 1000;
+    inputIsValid.isValidBuilding = formValues.building > 0 && formValues.building < 100;
+    if (!authorized) {
+      inputIsValid.isValidName = formValues.username.length > 2 && formValues.username.length < 25;
+      inputIsValid.isValidEmail = formValues.email.length > 5; 
+    }
+
+    setIsValid(inputIsValid.isValidStreet && inputIsValid.isValidCorp && inputIsValid.isValidBuilding && inputIsValid.isValidName && inputIsValid.isValidEmail);
+  }, [formValues]);
+
+  if (isSubmit) {
     return <Redirect from={url} to={`${url}/success`} />;
   } else {
     return (
@@ -86,7 +96,7 @@ export default function Mesto(props) {
             <fieldset className="form__fieldset form__fieldset_userInfo">
               <div className="form__household-align">
                 <label className="form__input-label">
-                  Имя
+                  Имя*
                   <input
                     className="form__input form__input_type_name"
                     type="text"
@@ -107,7 +117,7 @@ export default function Mesto(props) {
                 </label>
               </div>
               <label className="form__input-label">
-                E-mail
+                E-mail*
                 <input
                   className="form__input"
                   type="email"
@@ -143,7 +153,7 @@ export default function Mesto(props) {
               <option>Южный</option>
             </select>
             <label htmlFor="street" className="form__input-label">
-              Адрес
+              Адрес*
             </label>
             <input
               type="text"
@@ -157,8 +167,9 @@ export default function Mesto(props) {
             ></input>
             <div className="form__household-align">
               <label htmlFor="building" className="form__input-label">
-                Дом
+                Дом*
                 <input
+                  type="number"
                   id="building"
                   placeholder="12"
                   required
@@ -170,8 +181,9 @@ export default function Mesto(props) {
               </label>
 
               <label htmlFor="corp" className="form__input-label">
-                Корпус
+                Корпус*
                 <input
+                  type="number"
                   id="corp"
                   placeholder="2"
                   className="form__input form__input_type_corp"
@@ -184,6 +196,7 @@ export default function Mesto(props) {
               <label htmlFor="entrance" className="form__input-label">
                 Подъезд
                 <input
+                  type="number"
                   id="entrance"
                   placeholder="3"
                   className="form__ input form__input_type_entrance"
@@ -205,15 +218,14 @@ export default function Mesto(props) {
               onChange={handleInputChange}
             ></textarea>
           </fieldset>
-          <Link to={`${url}/success`}>
             <button
-              className="button button_theme_send"
+              className={isValid ? "button button_theme_send" : "button button_theme_send button_theme_disabled"}
               type="submit"
               onClick={handleSubmit}
+              disabled={isValid ? false : true}
             >
               Отправить обращение
             </button>
-          </Link>
         </form>
       </main>
     );

@@ -1,11 +1,16 @@
 .button{
     width: 245px;
     height: 45px;
-    cursor: pointer;
     border: none;
     color: white;
 }
 
 .button:focus{
     outline: none;
+}
+
+.button:hover{
+    opacity: 0.7;
+    transition: opacity .5s linear 0s;
+    cursor: pointer;
 }

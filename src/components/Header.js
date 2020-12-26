@@ -21,7 +21,7 @@ export default function Header(props) {
             </Link>
           </li>
           <li className="header__menu-item">
-            <Link to="#" className="header__menu-link">
+            <Link to="/result" className="header__menu-link">
               РЕЗУЛЬТАТЫ
             </Link>
           </li>
@@ -33,7 +33,7 @@ export default function Header(props) {
           МОЙ КАБИНЕТ
         </Link>
         <Link to="/categories">
-          <button type="button" className="header__button">
+          <button type="button" className="button button_theme_header">
             СОЗДАТЬ ОБРАЩЕНИЕ
           </button>
         </Link>

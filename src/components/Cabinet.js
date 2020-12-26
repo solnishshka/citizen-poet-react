@@ -1,5 +1,5 @@
 import icon from "../images/form-icon.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Cabinet(props) {
   const [authorized, setAuthorized] = useState(
@@ -17,6 +17,7 @@ export default function Cabinet(props) {
   const [email, setEmail] = useState(
     localStorage.getItem("userEmail") ? localStorage.getItem("userEmail") : ""
   );
+  const [isValid, setIsValid] = useState(false);
 
   function handleChangeName(e) {
     setName(e.target.value);
@@ -59,6 +60,13 @@ export default function Cabinet(props) {
     localStorage.removeItem('user');
   }
 
+  useEffect(() => {
+    const isValidName = name.length > 2 && name.length < 25;
+    const isValidSurname = surname.length > 2 && surname.length < 25;
+    const isValidEmail = email.length > 4;
+    setIsValid(isValidName && isValidSurname && isValidEmail);
+  }, [name, surname, email]);
+
   if (authorized) {
     return (
       <form
@@ -78,6 +86,8 @@ export default function Cabinet(props) {
             id="name"
             value={name}
             onChange={handleChangeName}
+            minLength="2"
+            maxLength="25"
           />
         </label>
         <label
@@ -92,6 +102,8 @@ export default function Cabinet(props) {
             id="surname"
             value={surname}
             onChange={handleChangeSurname}
+            minLength="2"
+            maxLength="25"
           />
         </label>
         <label
@@ -109,7 +121,7 @@ export default function Cabinet(props) {
           />
         </label>
         <div className="form__button-items">
-          <button className="button button_theme_save" type="submit">
+          <button className={isValid ? "button button_theme_save" : "button button_theme_save button_theme_disabled"} type="submit" disabled={isValid ? false : true} >
             Сохранить
           </button>
           <button className="button button_theme_exit" type="button" onClick={handleClickExitButton}>
@@ -178,7 +190,7 @@ export default function Cabinet(props) {
             />
           </p>
         </label>
-        <button className="button button_theme_register" type="submit">
+        <button className={isValid ? "button button_theme_register" : "button button_theme_register button_theme_disabled"} type="submit" disabled={isValid ? false : true}>
           Зарегистрироваться
         </button>
         <p className="form__text">или войдите с помощью</p>

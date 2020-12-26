@@ -1,15 +1,8 @@
-.header__button{
-    color: white;
+.button_theme_header{
     background-color: #EC626A;
     font-size: 14px;
     font-weight: bold;
-    border: none;
     height: 42px;
     width: 160px;
     padding: 0;
-}
-
-.header__button:focus{
-    outline: none;
-    cursor: pointer;
 }

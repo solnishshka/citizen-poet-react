@@ -16,11 +16,11 @@ export default function Main(props) {
             реализация намеченных плановых заданий способствует подготовки и
             реализации соответствующий условий активизации.
           </p>
-          <button type="button" className="lead__button">
-            <Link to="/categories" className="lead__button-link">
+          <Link to="/categories" className="lead__button-link">
+            <button type="button" className="button button_theme_lead">
               {"Выбрать категорию >>>"}
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
         <div className="lead__right-column">
           <div className="lead__title-item">
@@ -44,7 +44,7 @@ export default function Main(props) {
         <div className="info__item">
           <div className="info__title-item">
             <div className="info__rectangle"></div>
-            <h2 className="info__title">ВСЕГО РЕШЕНО ПРОБЛЕМ</h2>
+            <h2 className="info__title">ВСЕГО ПОЛУЧЕНО ПРОБЛЕМ</h2>
           </div>
           <p className="info__text">364,245</p>
         </div>

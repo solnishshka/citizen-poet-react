@@ -7,6 +7,9 @@ import config from "../utils/data";
 import { useRouteMatch, useParams } from "react-router-dom";
 
 export default function Quotes(props) {
+  let id = localStorage.getItem("quote-id")
+    ? JSON.parse(localStorage.getItem("quote-id")) + 1
+    : 0;
   const [qoutes, setQuotes] = React.useState([]);
   const { url } = useRouteMatch();
   const { name, title } = useParams();
@@ -14,9 +17,15 @@ export default function Quotes(props) {
     .filter((item) => item.name === name)[0]
     .subcategories.filter((item) => item.name === title)[0].query;
   const [isDisabled, setIsDisabled] = React.useState(true);
+  const cat = config.filter((item) => item.name === name)[0].title;
+  const subCat = config
+    .filter((item) => item.name === name)[0]
+    .subcategories.filter((item) => item.name === title)[0].title;
   const [activeCard, setActiveCard] = React.useState({
     id: 100,
-    quote: ''
+    quote: "",
+    cat: cat,
+    subCat: subCat
   });
 
   React.useEffect(() => {
@@ -61,16 +70,18 @@ export default function Quotes(props) {
 
   function handleClickCard(isActive, id, text) {
     if (isActive) {
-      setActiveCard({id : 100, quote : ''});
+      setActiveCard({ id: 100, quote: "", cat: '', subCat: ''});
       setIsDisabled(true);
     } else {
-      setActiveCard({id : id, quote : text});
+      setActiveCard({ id: id, quote: text, cat: cat, subCat: subCat });
       setIsDisabled(false);
     }
   }
 
   function handleSubmit() {
-    localStorage.setItem('quote', JSON.stringify(activeCard.quote));
+    localStorage.setItem("quote-id", id);
+    console.log(activeCard);
+    localStorage.setItem(`quote-${id}`, JSON.stringify(activeCard));
   }
 
   return (
@@ -80,34 +91,32 @@ export default function Quotes(props) {
         navLinkText={[
           "Вернуться на главную",
           "Категории",
-          config.filter((item) => item.name === name)[0].title,
-          config
-            .filter((item) => item.name === name)[0]
-            .subcategories.filter((item) => item.name === title)[0].title,
+          cat,
+          subCat
         ]}
         title={"3. Выберите описание проблемы"}
         progressBar={qImage}
       />
-        <section className="table table_theme_quotes">
-          {setResult(0, 7).map((item, i) => (
-            <Card
-              cardLink="#"
-              key={i}
-              id={i}
-              className={"card__description card__description_theme_quotes"}
-              cardClassName={"card_type_quotes"}
-              cardText={item}
-              onClick={handleClickCard}
-              isActive={i === activeCard.id ? true : false}
-            />
-          ))}
-        </section>
+      <section className="table table_theme_quotes">
+        {setResult(0, 7).map((item, i) => (
+          <Card
+            cardLink="#"
+            key={i}
+            id={i}
+            className={"card__description card__description_theme_quotes"}
+            cardClassName={"card_type_quotes"}
+            cardText={item}
+            onClick={handleClickCard}
+            isActive={i === activeCard.id ? true : false}
+          />
+        ))}
+      </section>
       <div className="button-items">
-        <Link to={`${url}/mesto`}>
+        <Link to={`${url}/mesto/${id}`}>
           <button
             onClick={handleSubmit}
             type="button"
-            className="button button_theme_apply"
+            className={isDisabled ? "button button_theme_apply button_theme_disabled" : "button button_theme_apply"}
             disabled={isDisabled ? true : false}
           >
             Подтвердить

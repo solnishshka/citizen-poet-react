@@ -3,4 +3,5 @@
     text-decoration: none;
     cursor: pointer;
     color: #333333;
+    min-width: 350px;
 }

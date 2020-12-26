@@ -31,6 +31,12 @@ export default function Breadcrumbs(props) {
         Вернуться к описанию
       </Link>
     );
+  } else if (props.url.includes("result")) {
+    return (
+      <Link className="breadcrumbs" to="/">
+        Вернуться на главную
+      </Link>
+    );
   } else {
     return (
       <>
