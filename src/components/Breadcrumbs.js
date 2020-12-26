@@ -21,13 +21,13 @@ export default function Breadcrumbs(props) {
 
   if (props.url.includes("success")) {
     return (
-      <Link className="breadcrumbs" to={crumbs[crumbs.length - 3]}>
+      <Link className="breadcrumbs" to={crumbs[crumbs.length - 4]}>
         Вернуться к описанию
       </Link>
     );
   } else if (props.url.includes("mesto")) {
     return (
-      <Link className="breadcrumbs" to={crumbs[crumbs.length - 2]}>
+      <Link className="breadcrumbs" to={crumbs[crumbs.length - 3]}>
         Вернуться к описанию
       </Link>
     );

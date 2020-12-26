@@ -27,9 +27,9 @@ export default function Mesto(props) {
   const inputIsValid = {
     isValidName: true,
     isValidEmail: true,
-    isValidStreet: false,
-    isValidBuilding: false,
-    isValidCorp: false
+    isValidStreet: true,
+    isValidBuilding: true,
+    isValidCorp: true
   };
 
   const handleInputChange = useCallback(
@@ -69,7 +69,7 @@ export default function Mesto(props) {
     }
 
     setIsValid(inputIsValid.isValidStreet && inputIsValid.isValidCorp && inputIsValid.isValidBuilding && inputIsValid.isValidName && inputIsValid.isValidEmail);
-  }, [formValues]);
+  }, [formValues, authorized]);
 
   if (isSubmit) {
     return <Redirect from={url} to={`${url}/success`} />;
@@ -98,7 +98,7 @@ export default function Mesto(props) {
                 <label className="form__input-label">
                   Имя*
                   <input
-                    className="form__input form__input_type_name"
+                    className={inputIsValid.isValidName ? "form__input form__input_type_name" : "form__input form__input_type_name form__input_type_error"}
                     type="text"
                     name="username"
                     value={username}
@@ -119,7 +119,7 @@ export default function Mesto(props) {
               <label className="form__input-label">
                 E-mail*
                 <input
-                  className="form__input"
+                  className={inputIsValid.isValidEmail ? "form__input" : "form__input form__input_type_error"}
                   type="email"
                   name="email"
                   value={email}
@@ -160,7 +160,7 @@ export default function Mesto(props) {
               placeholder="Начните вводить название"
               required
               id="street"
-              className={`form__input form__input_type_street`}
+              className={inputIsValid.isValidStreet ? "form__input form__input_type_street" : "form__input form__input_type_street form__input_type_error"}
               name="street"
               value={street}
               onChange={handleInputChange}

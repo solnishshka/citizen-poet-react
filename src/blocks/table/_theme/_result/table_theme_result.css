@@ -1,8 +1,8 @@
 .table_theme_result{
-    grid-template-columns: repeat(2, 430px);
-    grid-template-rows: repeat(auto-fill, 300px);
+    grid-template-columns: repeat(2, 390px);
+    grid-template-rows: repeat(auto-fill, 340px);
     column-gap: 70px;
     row-gap: 60px;
-    max-width: 870px;
+    max-width: 850px;
     margin-bottom: 70px;
 }

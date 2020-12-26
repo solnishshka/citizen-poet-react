@@ -1,7 +1,7 @@
 import Card from "./Card";
 import PageTemplate from "./PageTemplate";
 import qImage from "../images/progress-bar-3.png";
-import React from "react";
+import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import config from "../utils/data";
 import { useRouteMatch, useParams } from "react-router-dom";
@@ -10,25 +10,25 @@ export default function Quotes(props) {
   let id = localStorage.getItem("quote-id")
     ? JSON.parse(localStorage.getItem("quote-id")) + 1
     : 0;
-  const [qoutes, setQuotes] = React.useState([]);
+  const [qoutes, setQuotes] = useState([]);
   const { url } = useRouteMatch();
   const { name, title } = useParams();
   const query = config
     .filter((item) => item.name === name)[0]
     .subcategories.filter((item) => item.name === title)[0].query;
-  const [isDisabled, setIsDisabled] = React.useState(true);
+  const [isDisabled, setIsDisabled] = useState(true);
   const cat = config.filter((item) => item.name === name)[0].title;
   const subCat = config
     .filter((item) => item.name === name)[0]
     .subcategories.filter((item) => item.name === title)[0].title;
-  const [activeCard, setActiveCard] = React.useState({
+  const [activeCard, setActiveCard] = useState({
     id: 100,
     quote: "",
     cat: cat,
     subCat: subCat
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetch(`https://buymebuyme.xyz?q=%20${query}%20`)
       .then((result) => {
         if (result.ok) {
@@ -56,11 +56,14 @@ export default function Quotes(props) {
           if (str.includes(query)) {
             return i;
           }
+          else {
+            return -1;
+          }
         })
-        .filter((item) => item !== undefined)[0];
+        .filter((item) => item !== -1)[0];
       for (let m = index; m < index + 4; m++) {
         if (item[m]) {
-          text = text + item[m] + "\n";
+          text = text + item[m].charAt(0).toUpperCase() + item[m].slice(1) + "\n";
         }
       }
       texts[k] = text.split("\n");
@@ -80,7 +83,6 @@ export default function Quotes(props) {
 
   function handleSubmit() {
     localStorage.setItem("quote-id", id);
-    console.log(activeCard);
     localStorage.setItem(`quote-${id}`, JSON.stringify(activeCard));
   }
 

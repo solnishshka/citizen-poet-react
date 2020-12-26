@@ -36,7 +36,7 @@ export default function Result(props) {
       <PageTemplate title={"Обращения граждан"} progressBar={qImage} />
       <section className="table table_theme_result">
         {count >= 0 ? (
-          result.map((card, i) => (
+          result.filter(card => card.name !== '' && card.adress !== '').map((card, i) => (
             <div className="result" key={i}>
               <h2 className="result__title">Гражданин: {card.name}</h2>
               <p className="result__text">Адрес: {card.adress}</p>
@@ -47,7 +47,7 @@ export default function Result(props) {
                 cardClassName={"card_type_result"}
                 cardText={card.quote}
               />
-            </div>
+            </div>          
           ))
         ) : (
           <></>
