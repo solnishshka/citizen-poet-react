@@ -2,6 +2,8 @@
     width: 245px;
     height: 45px;
     cursor: pointer;
+    border: none;
+    color: white;
 }
 
 .button:focus{

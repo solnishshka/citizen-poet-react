@@ -1,0 +1,6 @@
+.form__button-items{
+    display: flex;
+    justify-content: space-between;
+    min-width: 246px;
+    margin-top: 24px;
+}

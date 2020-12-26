@@ -1,7 +1,6 @@
-.form__fielset {
+.form__fieldset {
   border: 0;
   margin: 0;
-  margin-bottom: 74px;
   padding: 0;
 
   display: flex;

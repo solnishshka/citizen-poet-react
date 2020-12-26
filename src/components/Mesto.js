@@ -5,9 +5,13 @@ import config from "../utils/data";
 import { useEffect, useState, useCallback } from "react";
 
 export default function Mesto(props) {
+  const authorized = localStorage.getItem('authorized') ? JSON.parse(localStorage.getItem('authorized')) : false;
   const { url } = useRouteMatch();
   const { name, title } = useParams();
   const [formValues, setFormValues] = useState({
+    username: "",
+    surname: "",
+    email: "",
     area: "",
     street: "",
     building: "",
@@ -15,10 +19,11 @@ export default function Mesto(props) {
     entrance: "",
     comments: "",
   });
+
   const [isSubmit, setIsSubmit] = useState(false);
   const [isValid, setIsValid] = useState({
     streetIsValid: true,
-    buildingIsValid: true
+    buildingIsValid: true,
   });
 
   const handleInputChange = useCallback(
@@ -37,13 +42,24 @@ export default function Mesto(props) {
 
   useEffect(() => {
     setIsValid({
-      streetIsValid : formValues.street.length > 10 &&  formValues.street.length < 50,
-      buildingIsValid : typeof formValues.building === 'number'
+      streetIsValid:
+        formValues.street.length > 10 && formValues.street.length < 50,
+      buildingIsValid: typeof formValues.building === "number",
     });
   }, [formValues]);
-  
-  const { area, street, building, corp, entrance, comments } = formValues;
-  console.log(isSubmit)
+
+  const {
+    username,
+    surname,
+    email,
+    area,
+    street,
+    building,
+    corp,
+    entrance,
+    comments,
+  } = formValues;
+  console.log(isSubmit);
   console.log(isValid);
   if (isSubmit && isValid) {
     return <Redirect from={url} to={`${url}/success`} />;
@@ -63,9 +79,46 @@ export default function Mesto(props) {
           title={"4. Укажите местонахождение проблемы"}
           progressBar={qImage}
         />
-
         <form className="form form_type_adress">
-          <fieldset className="form__fielset form__fieldset_address">
+          {authorized ? (
+            <></>
+          ) : (
+            <fieldset className="form__fieldset form__fieldset_userInfo">
+              <div className="form__household-align">
+                <label className="form__input-label">
+                  Имя
+                  <input
+                    className="form__input form__input_type_name"
+                    type="text"
+                    name="username"
+                    value={username}
+                    onChange={handleInputChange}
+                  />
+                </label>
+                <label className="form__input-label">
+                  Фамилия
+                  <input
+                    className="form__input form__input_type_name"
+                    type="text"
+                    name="surname"
+                    value={surname}
+                    onChange={handleInputChange}
+                  />
+                </label>
+              </div>
+              <label className="form__input-label">
+                E-mail
+                <input
+                  className="form__input"
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={handleInputChange}
+                />
+              </label>
+            </fieldset>
+          )}
+          <fieldset className="form__fieldset form__fieldset_address">
             <label htmlFor="area" className="form__input-label">
               Выберите район
             </label>
@@ -154,7 +207,7 @@ export default function Mesto(props) {
           </fieldset>
           <Link to={`${url}/success`}>
             <button
-              className="button button_theme_apply"
+              className="button button_theme_send"
               type="submit"
               onClick={handleSubmit}
             >

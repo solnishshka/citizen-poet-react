@@ -10,6 +10,7 @@ import Subcategories from "./Subcategories";
 import { Switch, Route } from 'react-router-dom';
 import Quotes from "./Quotes";
 
+
 function App() {
   return (
     <div className="App">

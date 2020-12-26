@@ -1,11 +1,22 @@
 import icon from "../images/form-icon.png";
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function Cabinet(props) {
-  const [authorized, setAuthorized] = useState(localStorage.getItem('authorized') ? true : false);
-  const [name, setName] = useState(localStorage.getItem('userName') ? localStorage.getItem('userName') : '');
-  const [surname, setSurname] = useState(localStorage.getItem('userSurname') ? localStorage.getItem('userSurname') : '');
-  const [email, setEmail] = useState(localStorage.getItem('userEmail') ? localStorage.getItem('userEmail') : '');
+  const [authorized, setAuthorized] = useState(
+    localStorage.getItem("authorized") ? true : false
+  );
+
+  const [name, setName] = useState(
+    localStorage.getItem("userName") ? localStorage.getItem("userName") : ""
+  );
+  const [surname, setSurname] = useState(
+    localStorage.getItem("userSurname")
+      ? localStorage.getItem("userSurname")
+      : ""
+  );
+  const [email, setEmail] = useState(
+    localStorage.getItem("userEmail") ? localStorage.getItem("userEmail") : ""
+  );
 
   function handleChangeName(e) {
     setName(e.target.value);
@@ -17,42 +28,112 @@ export default function Cabinet(props) {
 
   function handleChangeEmail(e) {
     setEmail(e.target.value);
+
   }
 
   function handleSubmit(e) {
     e.preventDefault();
     setAuthorized(true);
-    localStorage.setItem('authorized', true);
-    localStorage.setItem('userName', name);
-    localStorage.setItem('userSurname', surname);
-    localStorage.setItem('userEmail', email);
+    localStorage.setItem("authorized", true);
+    localStorage.setItem("userName", name);
+    localStorage.setItem("userSurname", surname);
+    localStorage.setItem("userEmail", email);
   }
 
   function handleSubmitSaveForm(e) {
     e.preventDefault();
-    localStorage.setItem('userName', name);
-    localStorage.setItem('userSurname', surname);
-    localStorage.setItem('userEmail', email);
+    localStorage.setItem("userName", name);
+    localStorage.setItem("userSurname", surname);
+    localStorage.setItem("userEmail", email);
+  }
+
+  function handleClickExitButton() {
+    setAuthorized(false);
+    setEmail('');
+    setName('');
+    setSurname('');
+    localStorage.removeItem("authorized");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userSurname");
+    localStorage.removeItem("userEmail");
+    localStorage.removeItem('user');
   }
 
   if (authorized) {
     return (
-      <form className="form form_type_authorized" onSubmit={handleSubmitSaveForm}>
+      <form
+        className="form form_type_authorized"
+        onSubmit={handleSubmitSaveForm}
+      >
         <h2 className="form__title form__title_type_auth">Личный кабинет</h2>
-        <label className="form__input-label form__input-label_type_auth" htmlFor="name">Имя<input type="text" className="form__input form__input_type_auth" name="name" id="name" value={name} onChange={handleChangeName} /></label>
-        <label className="form__input-label form__input-label_type_auth" htmlFor="surname">Фамилия<input type="text" className="form__input form__input_type_auth" name="surname" id="surname" value={surname} onChange={handleChangeSurname} /></label>
-        <label className="form__input-label form__input-label_type_auth" htmlFor="email">Почта<input type="email" className="form__input form__input_type_auth" name="email" id="email" value={email} onChange={handleChangeEmail} /></label>
-        <button className="button button_theme_save" type="submit">Сохранить</button>
+        <label
+          className="form__input-label form__input-label_type_auth"
+          htmlFor="name"
+        >
+          Имя
+          <input
+            type="text"
+            className="form__input form__input_type_auth"
+            name="name"
+            id="name"
+            value={name}
+            onChange={handleChangeName}
+          />
+        </label>
+        <label
+          className="form__input-label form__input-label_type_auth"
+          htmlFor="surname"
+        >
+          Фамилия
+          <input
+            type="text"
+            className="form__input form__input_type_auth"
+            name="surname"
+            id="surname"
+            value={surname}
+            onChange={handleChangeSurname}
+          />
+        </label>
+        <label
+          className="form__input-label form__input-label_type_auth"
+          htmlFor="email"
+        >
+          Почта
+          <input
+            type="email"
+            className="form__input form__input_type_auth"
+            name="email"
+            id="email"
+            value={email}
+            onChange={handleChangeEmail}
+          />
+        </label>
+        <div className="form__button-items">
+          <button className="button button_theme_save" type="submit">
+            Сохранить
+          </button>
+          <button className="button button_theme_exit" type="button" onClick={handleClickExitButton}>
+            Выход
+          </button>
+        </div>
       </form>
     );
-  }
-  else {
+  } else {
     return (
-      <form className="form form_type_register" name="register-form" onSubmit={handleSubmit}>
+      <form
+        className="form form_type_register"
+        name="register-form"
+        onSubmit={handleSubmit}
+      >
         <h2 className="form__title">Добро пожаловать!</h2>
-        <p className="form__description">Укажите свои настоящие имя и фамилию</p>
+        <p className="form__description">
+          Укажите свои настоящие имя и фамилию
+        </p>
         <div className="form__input-items">
-          <label className="form__input-label form__input-label_type_register" htmlFor="userName">
+          <label
+            className="form__input-label form__input-label_type_register"
+            htmlFor="userName"
+          >
             Имя
             <input
               className="form__input form__input_type_name"
@@ -60,11 +141,14 @@ export default function Cabinet(props) {
               name="userName"
               placeholder="Иван"
               id="userName"
-              value={name ? name : ''}
+              value={name ? name : ""}
               onChange={handleChangeName}
             />
           </label>
-          <label className="form__input-label form__input-label_type_register" htmlFor="userSurname">
+          <label
+            className="form__input-label form__input-label_type_register"
+            htmlFor="userSurname"
+          >
             Фамилия
             <input
               className="form__input form__input_type_name"
@@ -72,7 +156,7 @@ export default function Cabinet(props) {
               name="userSurname"
               placeholder="Иванов"
               id="userSurname"
-              value={surname ? surname : ''}
+              value={surname ? surname : ""}
               onChange={handleChangeSurname}
             />
           </label>
@@ -90,7 +174,7 @@ export default function Cabinet(props) {
               placeholder="email@yandex.ru"
               id="userEmail"
               onChange={handleChangeEmail}
-              value={email ? email : ''}
+              value={email ? email : ""}
             />
           </p>
         </label>
