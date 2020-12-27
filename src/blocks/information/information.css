@@ -1,0 +1,10 @@
+.information{
+    background-image: url(../../images/circle.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 540px;
+    padding-bottom: 506px;
+    position: absolute;
+    left: 500px;
+    top: 219px;
+}

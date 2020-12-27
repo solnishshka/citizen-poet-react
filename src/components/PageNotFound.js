@@ -8,7 +8,7 @@ function PageNotFound() {
       </h3>
       <p>Скоро здесь будет контент</p>
       <Link to="/">
-        <button className="button button_theme_apply">
+        <button className="button">
           Вернуться на главную
         </button>
       </Link>

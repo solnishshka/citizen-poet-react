@@ -1,0 +1,5 @@
+.faces__item{
+    border: 0.7px solid rgba(196, 196, 196, 0.5);
+    max-height: 357px;
+    min-width: 255px;
+}

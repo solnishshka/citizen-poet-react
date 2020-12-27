@@ -4,7 +4,7 @@ import PageTemplate from "./PageTemplate";
 import config from "../utils/data";
 
 export default function Categories(props) {
-  const crumbs = ["Вернуться на главную", "Категории"]
+  const crumbs = ["Вернуться на главную", "Категории"];
 
   return (
     <main className="content">
@@ -25,11 +25,11 @@ export default function Categories(props) {
             cardTitle={item.title}
             cardImage={item.image}
             cardText={item.description}
-            card = {item}
-            key = {item.id}
+            card={item}
+            key={item.id}
           >
             <h2 className="card__title">{item.title}</h2>
-          <img className="card__image" src={item.image} alt="" />
+            <img className="card__image" src={item.image} alt="" />
           </Card>
         ))}
       </section>

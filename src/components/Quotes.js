@@ -1,7 +1,7 @@
 import Card from "./Card";
 import PageTemplate from "./PageTemplate";
 import qImage from "../images/progress-bar-3.png";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import config from "../utils/data";
 import { useRouteMatch, useParams } from "react-router-dom";
@@ -25,7 +25,7 @@ export default function Quotes(props) {
     id: 100,
     quote: "",
     cat: cat,
-    subCat: subCat
+    subCat: subCat,
   });
 
   useEffect(() => {
@@ -55,15 +55,15 @@ export default function Quotes(props) {
         .map((str, i) => {
           if (str.includes(query)) {
             return i;
-          }
-          else {
+          } else {
             return -1;
           }
         })
         .filter((item) => item !== -1)[0];
       for (let m = index; m < index + 4; m++) {
         if (item[m]) {
-          text = text + item[m].charAt(0).toUpperCase() + item[m].slice(1) + "\n";
+          text =
+            text + item[m].charAt(0).toUpperCase() + item[m].slice(1) + "\n";
         }
       }
       texts[k] = text.split("\n");
@@ -73,7 +73,7 @@ export default function Quotes(props) {
 
   function handleClickCard(isActive, id, text) {
     if (isActive) {
-      setActiveCard({ id: 100, quote: "", cat: '', subCat: ''});
+      setActiveCard({ id: 100, quote: "", cat: "", subCat: "" });
       setIsDisabled(true);
     } else {
       setActiveCard({ id: id, quote: text, cat: cat, subCat: subCat });
@@ -90,12 +90,7 @@ export default function Quotes(props) {
     <main className="content">
       <PageTemplate
         navLink={`/categories/${name}`}
-        navLinkText={[
-          "Вернуться на главную",
-          "Категории",
-          cat,
-          subCat
-        ]}
+        navLinkText={["Вернуться на главную", "Категории", cat, subCat]}
         title={"3. Выберите описание проблемы"}
         progressBar={qImage}
       />
@@ -118,7 +113,11 @@ export default function Quotes(props) {
           <button
             onClick={handleSubmit}
             type="button"
-            className={isDisabled ? "button button_theme_disabled button_theme_apply" : "button button_theme_apply"}
+            className={
+              isDisabled
+                ? "button button_theme_disabled button_theme_apply"
+                : "button button_theme_apply"
+            }
             disabled={isDisabled ? true : false}
           >
             Подтвердить

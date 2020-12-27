@@ -1,6 +1,8 @@
 import PageTemplate from "./PageTemplate";
 import Card from "./Card";
-import qImage from "../images/progress-bar-5.png";
+import img_1 from "../images/img_1.png";
+import img_2 from "../images/img_2.png";
+import img_3 from "../images/img_3.png";
 
 export default function Result(props) {
   const count = localStorage.getItem("quote-id")
@@ -33,22 +35,78 @@ export default function Result(props) {
 
   return (
     <main className="content">
-      <PageTemplate title={"Обращения граждан"} progressBar={qImage} />
+      <PageTemplate title={"Результаты"} />
+      <section className="info">
+        <div className="info__item">
+          <div className="info__title-item">
+            <img className="info__rectangle" src={img_1} />
+            <h2 className="info__title">ЗАРЕГИСТРИРОВАНО ПОЛЬЗОВАТЕЛЕЙ</h2>
+          </div>
+          <p className="info__text">523,245</p>
+        </div>
+        <div className="info__item">
+          <div className="info__title-item">
+            <img className="info__rectangle" src={img_2} />
+            <h2 className="info__title">ВСЕГО СОЗДАНО ОБРАЩЕНИЙ</h2>
+          </div>
+          <p className="info__text">1,018,933</p>
+        </div>
+        <div className="info__item">
+          <div className="info__title-item">
+            <img className="info__rectangle" src={img_3} />
+            <h2 className="info__title">ВСЕГО РЕШЕНО ПРОБЛЕМ</h2>
+          </div>
+          <p className="info__text">764,245</p>
+        </div>
+      </section>
+      <section className="description">
+        <div className="description__left">
+          <p className="description__text">
+            Наш сервис получает и обрабатывает обращения граждан уже более 5
+            лет. Несмотря на внесение правок в законодательство и введении
+            особого режима цензуры, наш портал идёт в ногу со временем и
+            предоставляет возможность создавать обращения и делать этот мир
+            лучше.
+          </p>
+          <p className="description__text">
+            Мы стараемся сохранить прежние механизмы по домоуправлению, остаясь
+            при этом в рамках закона. Все обращения, созданные на нашем портале
+            будут опубликованы строго конфиденциально.
+          </p>
+        </div>
+        <div className="description__right">
+          <p className="description__text">
+            Изо дня в день мы стараемся сделать наш свервис лучше, чтобы
+            граждане могли непосредственно влиять на среду, в которой они
+            проживают. Мы всегда прислушиваемся к Вашим замечаниям и учитываем
+            все пожелания.
+          </p>
+          <p className="description__text">
+            <span className="description__span">Помогите нам стать лучше!</span> Подпишитесь на нашу рассылку, чтобы
+            участвовать в регулярных голосованиях и влиять на развитие сервиса:
+          </p>
+          <button className="button">Подписаться</button>
+        </div>
+      </section>
       <section className="table table_theme_result">
         {count >= 0 ? (
-          result.filter(card => card.name !== '' && card.adress !== '').map((card, i) => (
-            <div className="result" key={i}>
-              <h2 className="result__title">Гражданин: {card.name}</h2>
-              <p className="result__text">Адрес: {card.adress}</p>
-              <p className="result__text">Категория: {card.category}/{card.subCategory}</p>
-              <Card
-                cardLink="#"
-                className={"card__description card__description_theme_quotes"}
-                cardClassName={"card_type_result"}
-                cardText={card.quote}
-              />
-            </div>          
-          ))
+          result
+            .filter((card) => card.name !== "" && card.adress !== "")
+            .map((card, i) => (
+              <div className="result" key={i}>
+                <h2 className="result__title">{card.name}</h2>
+                <p className="result__text">{card.adress}</p>
+                <p className="result__text">
+                  Категория: {card.category}/{card.subCategory}
+                </p>
+                <Card
+                  cardLink="#"
+                  className={"card__description card__description_theme_quotes"}
+                  cardClassName={"card_type_result"}
+                  cardText={card.quote}
+                />
+              </div>
+            ))
         ) : (
           <></>
         )}

@@ -29,7 +29,7 @@ export default function Mesto(props) {
     isValidEmail: true,
     isValidStreet: true,
     isValidBuilding: true,
-    isValidCorp: true
+    isValidCorp: true,
   };
 
   const handleInputChange = useCallback(
@@ -43,7 +43,9 @@ export default function Mesto(props) {
   function handleSubmit(e) {
     e.preventDefault();
     setIsSubmit(true);
-    formValues.username = localStorage.getItem('userName') ? localStorage.getItem('userName') : formValues.username;
+    formValues.username = localStorage.getItem("userName")
+      ? localStorage.getItem("userName")
+      : formValues.username;
     localStorage.setItem(`adress-${id}`, JSON.stringify(formValues));
   }
 
@@ -60,15 +62,24 @@ export default function Mesto(props) {
   } = formValues;
 
   useEffect(() => {
-    inputIsValid.isValidStreet = formValues.street.length > 10 && formValues.street.length < 150;
+    inputIsValid.isValidStreet =
+      formValues.street.length > 10 && formValues.street.length < 150;
     inputIsValid.isValidCorp = formValues.corp > 0 && formValues.corp < 1000;
-    inputIsValid.isValidBuilding = formValues.building > 0 && formValues.building < 100;
+    inputIsValid.isValidBuilding =
+      formValues.building > 0 && formValues.building < 100;
     if (!authorized) {
-      inputIsValid.isValidName = formValues.username.length > 2 && formValues.username.length < 25;
-      inputIsValid.isValidEmail = formValues.email.length > 5; 
+      inputIsValid.isValidName =
+        formValues.username.length > 2 && formValues.username.length < 25;
+      inputIsValid.isValidEmail = formValues.email.length > 5;
     }
 
-    setIsValid(inputIsValid.isValidStreet && inputIsValid.isValidCorp && inputIsValid.isValidBuilding && inputIsValid.isValidName && inputIsValid.isValidEmail);
+    setIsValid(
+      inputIsValid.isValidStreet &&
+        inputIsValid.isValidCorp &&
+        inputIsValid.isValidBuilding &&
+        inputIsValid.isValidName &&
+        inputIsValid.isValidEmail
+    );
   }, [formValues, authorized]);
 
   if (isSubmit) {
@@ -98,7 +109,11 @@ export default function Mesto(props) {
                 <label className="form__input-label">
                   Имя*
                   <input
-                    className={inputIsValid.isValidName ? "form__input form__input_type_name" : "form__input form__input_type_name form__input_type_error"}
+                    className={
+                      inputIsValid.isValidName
+                        ? "form__input form__input_type_name"
+                        : "form__input form__input_type_name form__input_type_error"
+                    }
                     type="text"
                     name="username"
                     value={username}
@@ -119,7 +134,11 @@ export default function Mesto(props) {
               <label className="form__input-label">
                 E-mail*
                 <input
-                  className={inputIsValid.isValidEmail ? "form__input" : "form__input form__input_type_error"}
+                  className={
+                    inputIsValid.isValidEmail
+                      ? "form__input"
+                      : "form__input form__input_type_error"
+                  }
                   type="email"
                   name="email"
                   value={email}
@@ -160,7 +179,11 @@ export default function Mesto(props) {
               placeholder="Начните вводить название"
               required
               id="street"
-              className={inputIsValid.isValidStreet ? "form__input form__input_type_street" : "form__input form__input_type_street form__input_type_error"}
+              className={
+                inputIsValid.isValidStreet
+                  ? "form__input form__input_type_street"
+                  : "form__input form__input_type_street form__input_type_error"
+              }
               name="street"
               value={street}
               onChange={handleInputChange}
@@ -218,14 +241,18 @@ export default function Mesto(props) {
               onChange={handleInputChange}
             ></textarea>
           </fieldset>
-            <button
-              className={isValid ? "button button_theme_send" : "button button_theme_send button_theme_disabled"}
-              type="submit"
-              onClick={handleSubmit}
-              disabled={isValid ? false : true}
-            >
-              Отправить обращение
-            </button>
+          <button
+            className={
+              isValid
+                ? "button button_theme_send"
+                : "button button_theme_send button_theme_disabled"
+            }
+            type="submit"
+            onClick={handleSubmit}
+            disabled={isValid ? false : true}
+          >
+            Отправить обращение
+          </button>
         </form>
       </main>
     );

@@ -10,6 +10,7 @@ import Subcategories from "./Subcategories";
 import { Switch, Route } from 'react-router-dom';
 import Quotes from "./Quotes";
 import Result from "./Result";
+import Footer from "./Footer";
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
             <PageNotFound />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </div>
   );

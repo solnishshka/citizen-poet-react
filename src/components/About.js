@@ -1,5 +1,5 @@
-import leadImage from "../images/lead_img.png";
-import infoImage from "../images/info-image.png";
+import faceOne from "../images/face_1.png";
+import faceTwo from "../images/face_2.png";
 
 export default function About(props) {
   return (
@@ -8,48 +8,34 @@ export default function About(props) {
         <div className="lead__left-column">
           <h1 className="lead__title">О ПОРТАЛЕ</h1>
           <p className="lead__text">
-            Портал «АКТИВНЫЙ ГРАЖДАНИН ПОЭТ» разработан с целью улучшения
-            качества жизни горожан через активное участие жителей в жизни
-            города. Здесь любой человек может сообщить о проблемах в своем
-            районе - доме, дворе, дороге или близлежащем парке, узнать о
-            проблемах, с которыми сталкиваются другие жители, а также
-            проконтролировать их решение.
+            Портал “Активный Гражданин Поэт” – это проект, разработанный с целью
+            улучшения качества жизни граждан и облика города через активное
+            участие жителей в жизни столицы. На портал житель может сообщить о
+            проблемах в содержании городских объектов (некачественной уборке,
+            наличии ям, неисправности освещения и пр.) и проконтролировать
+            качество устранения проблем городскими службами.
           </p>
           <p className="lead__text">
-            В связи с законом о цензуре на сайте можно оставлять жалобы только в
-            форме цитат поэтов-классиков. Для удобства пользователей есть
-            удобная категоризация проблем, а также готовые примеры цитат,
-            которые можно использовать для своих обращений. Обращаем внимание,
-            что все открытые жалобы, прошедшие модерацию, публикуются на сайте
-            на странице с результатами. 
-          </p>
-          <p className="lead__text">
-            Вместе сделаем наш город лучше!
-          </p>
-        </div>
-        <div className="lead__right-column lead__right-column_theme_about">
-          <img className="lead__image" src={leadImage} alt="" />
-          <h2 className="lead__title-warning lead__title-warning_theme_about">
-            Робот Роботович Роботов
-          </h2>
-          <p className="lead__subtitle lead__subtitle_theme_about">
-            Председатель ЖКХ
-          </p>
-          <p className="lead__text-warning lead__text-warning_theme_about">
-            Он такой классный и обеспечивает работу этого крутого сервиса, вот
-            он какой молодец, вот это всё он, его заслуга, какой он
-            замечательный.
+            На портале есть список категорий проблемных тем, которые
+            рассматриваются в рамках нашего портала. Список включает в себя
+            темы, связанные с некачественным содержанием домов, дворов, дорог и
+            парков, а также с нарушениями, обнаруженными в содержании
+            внутреннего хозяйства. Портал нацелен максимально в короткие сроки
+            обработать все обращения и поспособствовать решению всех проблем.
           </p>
         </div>
       </section>
-      <section className="info info_theme_about">
-        <div className="info__item">
-          <h2 className="info__title info__title_theme_about">ТОП ПРОБЛЕМ</h2>
-          <img className="info__image" src={infoImage} alt="" />
+      <div className="information"></div>
+      <section className="faces">
+        <div className="faces__item">
+          <img className="faces__image" src={faceOne} alt="София" />
+          <h2 className="faces__title">София Аль Робото</h2>
+          <p className="faces__text">Председатель ЖКХ</p>
         </div>
-        <div className="info__item">
-          <h2 className="info__title info__title_theme_about">ТОП ПРОБЛЕМ</h2>
-          <img className="info__image" src={infoImage} alt="" />
+        <div className="faces__item">
+          <img className="faces__image" src={faceTwo} alt="Марселия" />
+          <h2 className="faces__title">Марселия Яндексовна</h2>
+          <p className="faces__text">Руководитель портала</p>
         </div>
       </section>
     </main>

@@ -1,0 +1,5 @@
+.faces{
+    display: grid;
+    grid-template-columns: repeat(2, 255px);
+    column-gap: 30px;
+}

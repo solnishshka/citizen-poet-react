@@ -38,7 +38,9 @@ export default function Subcategories(props) {
       <section className="table table_theme_subcategories">
         {config[id].subcategories.map((card) => (
           <Card
-            className={"card__description card__description_theme_subcategories"}
+            className={
+              "card__description card__description_theme_subcategories"
+            }
             cardLink={`${url}/${card.name}`}
             cardTitle={card.title}
             cardText={card.description}

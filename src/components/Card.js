@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 export default function Card(props) {
   const card = {
-    id : props.id,
-    text : props.cardText
+    id: props.id,
+    text: props.cardText,
   };
 
   function handleClickCard() {
@@ -32,22 +32,22 @@ export default function Card(props) {
         >
           {props.children}
         </div>
-          {card.text ? (
-            card.text.map((text, i) => (
-              <p
-                className={
-                  props.isActive
-                    ? `${props.className} + card__description_active`
-                    : props.className
-                }
-                key={i}
-              >
-                {text}
-              </p>
-            ))
-          ) : (
-            <p></p>
-          )}
+        {card.text ? (
+          card.text.map((text, i) => (
+            <p
+              className={
+                props.isActive
+                  ? `${props.className} + card__description_active`
+                  : props.className
+              }
+              key={i}
+            >
+              {text}
+            </p>
+          ))
+        ) : (
+          <p></p>
+        )}
       </Link>
     </>
   );

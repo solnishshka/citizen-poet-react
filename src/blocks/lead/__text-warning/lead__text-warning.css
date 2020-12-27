@@ -1,6 +1,7 @@
 .lead__text-warning{
-    margin: 0 auto;
+    margin: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
     font-size: 16px;
-    line-height: 1.5;
-    max-width: 225px;
 }
