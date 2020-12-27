@@ -1,4 +1,5 @@
 @import url(./vendor/normalize.css);
+@import url(./vendor/fonts/fonts.css);
 @import url(./blocks/root/root.css);
 @import url(./blocks/content/content.css);
 
@@ -60,7 +61,6 @@
 @import url(./blocks/button-items/button-items.css);
 @import url(./blocks/button/button.css);
 @import url(./blocks/button/_theme/_apply/button_theme_apply.css);
-@import url(./blocks/button/_theme/_update/button_theme_update.css);
 @import url(./blocks/button/_theme/_register/button_theme_register.css);
 @import url(./blocks/button/_theme/_save/button_theme_save.css);
 @import url(./blocks/button/_theme/_exit/button_theme_exit.css);

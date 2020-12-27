@@ -60,7 +60,7 @@ export default function Mesto(props) {
   } = formValues;
 
   useEffect(() => {
-    inputIsValid.isValidStreet = formValues.street.length > 10 && formValues.street.length < 50;
+    inputIsValid.isValidStreet = formValues.street.length > 10 && formValues.street.length < 150;
     inputIsValid.isValidCorp = formValues.corp > 0 && formValues.corp < 1000;
     inputIsValid.isValidBuilding = formValues.building > 0 && formValues.building < 100;
     if (!authorized) {

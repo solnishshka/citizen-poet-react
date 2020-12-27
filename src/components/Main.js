@@ -24,7 +24,7 @@ export default function Main(props) {
         <div className="lead__right-column">
           <div className="lead__title-item">
             <img src={warningIcon} alt="" className="lead__warning-icon" />
-            <h2 className="lead__title-warning">Закон о цензуре</h2>
+            <h2 className="lead__title-warning">Цензура 2025</h2>
           </div>
           <p className="lead__text-warning">
             Для защиты общественной нравственности к рассмотрению принимаются

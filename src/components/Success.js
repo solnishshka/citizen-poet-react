@@ -22,7 +22,7 @@ export default function Success(props) {
             </button>
           </Link>
           <Link to="/">
-            <button className="button button_theme_update">На главную</button>
+            <button className="button">На главную</button>
           </Link>
         </div>
       </div>

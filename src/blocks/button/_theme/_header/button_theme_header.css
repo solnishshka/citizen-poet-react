@@ -6,3 +6,8 @@
     width: 160px;
     padding: 0;
 }
+
+.button_theme_header:hover{
+    opacity: 0.7;
+    background-color: #EC626A;
+}

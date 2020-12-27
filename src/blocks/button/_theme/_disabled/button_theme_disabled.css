@@ -1,10 +1,9 @@
 .button_theme_disabled{
-    color: #72DEA3;
-    background-color: white;
-    border: 1px solid #72DEA3;
+    background-color: #BBEBD1;
 }
 
 .button_theme_disabled:hover{
     opacity: 1;
     cursor: default;
+    background-color: #BBEBD1;
 }

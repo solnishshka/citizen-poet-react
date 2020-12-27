@@ -118,13 +118,13 @@ export default function Quotes(props) {
           <button
             onClick={handleSubmit}
             type="button"
-            className={isDisabled ? "button button_theme_apply button_theme_disabled" : "button button_theme_apply"}
+            className={isDisabled ? "button button_theme_disabled button_theme_apply" : "button button_theme_apply"}
             disabled={isDisabled ? true : false}
           >
             Подтвердить
           </button>
         </Link>
-        <button className="button button_theme_update">
+        <button className="button button_theme_disabled" disabled>
           Обновить варианты
         </button>
       </div>
