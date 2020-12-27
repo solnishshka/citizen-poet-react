@@ -11,3 +11,7 @@
     opacity: 0.7;
     background-color: #EC626A;
 }
+
+.button_theme_header:focus{
+    background-color: #EC626A;
+}

@@ -7,3 +7,7 @@
     opacity: 0.7;
     background-color: #EC626A;
 }
+
+.button_theme_exit:focus{
+    background-color: #EC626A;
+}
