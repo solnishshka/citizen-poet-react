@@ -1,8 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 
 export default function Footer(props) {
+  const { url, path } = useRouteMatch();
+  console.log(path);
+
   return (
-    <footer className="footer">
+    <footer className={url === "/" ?  "footer footer_theme_main" : "footer"}>
       <nav className="footer__nav">
         <ul className="footer__links">
           <li className="footer__link-item">
