@@ -5,17 +5,17 @@ export default function Footer(props) {
     <footer className="footer">
       <nav className="footer__nav">
         <ul className="footer__links">
-          <li>
+          <li className="footer__link-item">
             <Link className="footer__link" to="/about">
               О портале
             </Link>
           </li>
-          <li>
+          <li className="footer__link-item">
             <Link className="footer__link" to="/categories">
               Категории
             </Link>
           </li>
-          <li>
+          <li className="footer__link-item">
             <Link className="footer__link" to="/result">
               Результаты
             </Link>

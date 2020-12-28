@@ -24,8 +24,8 @@ export default function About(props) {
             обработать все обращения и поспособствовать решению всех проблем.
           </p>
         </div>
+        <div className="lead__information"></div>
       </section>
-      <div className="information"></div>
       <section className="faces">
         <div className="faces__item">
           <img className="faces__image" src={faceOne} alt="София" />

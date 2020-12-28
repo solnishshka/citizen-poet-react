@@ -39,21 +39,21 @@ export default function Result(props) {
       <section className="info">
         <div className="info__item">
           <div className="info__title-item">
-            <img className="info__rectangle" src={img_1} />
+            <img className="info__rectangle" src={img_1} alt="Иконка"/>
             <h2 className="info__title">ЗАРЕГИСТРИРОВАНО ПОЛЬЗОВАТЕЛЕЙ</h2>
           </div>
           <p className="info__text">523,245</p>
         </div>
         <div className="info__item">
           <div className="info__title-item">
-            <img className="info__rectangle" src={img_2} />
+            <img className="info__rectangle" src={img_2} alt="Иконка"/>
             <h2 className="info__title">ВСЕГО СОЗДАНО ОБРАЩЕНИЙ</h2>
           </div>
           <p className="info__text">1,018,933</p>
         </div>
         <div className="info__item">
           <div className="info__title-item">
-            <img className="info__rectangle" src={img_3} />
+            <img className="info__rectangle" src={img_3} alt="Иконка"/>
             <h2 className="info__title">ВСЕГО РЕШЕНО ПРОБЛЕМ</h2>
           </div>
           <p className="info__text">764,245</p>
@@ -82,15 +82,17 @@ export default function Result(props) {
             все пожелания.
           </p>
           <p className="description__text">
-            <span className="description__span">Помогите нам стать лучше!</span> Подпишитесь на нашу рассылку, чтобы
-            участвовать в регулярных голосованиях и влиять на развитие сервиса:
+            <span className="description__span">Помогите нам стать лучше!</span>{" "}
+            Подпишитесь на нашу рассылку, чтобы участвовать в регулярных
+            голосованиях и влиять на развитие сервиса:
           </p>
           <button className="button">Подписаться</button>
         </div>
       </section>
-      <section className="table table_theme_result">
-        {count >= 0 ? (
-          result
+
+      {count >= 0 ? (
+        <section className="table table_theme_result">
+          {result
             .filter((card) => card.name !== "" && card.adress !== "")
             .map((card, i) => (
               <div className="result" key={i}>
@@ -106,11 +108,11 @@ export default function Result(props) {
                   cardText={card.quote}
                 />
               </div>
-            ))
-        ) : (
-          <></>
-        )}
-      </section>
+            ))}
+        </section>
+      ) : (
+        <></>
+      )}
     </main>
   );
 }
