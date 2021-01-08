@@ -2,7 +2,9 @@ import PageTemplate from "./PageTemplate";
 import qImage from "../images/progress-bar-4.png";
 import { useRouteMatch, useParams, Redirect } from "react-router-dom";
 import config from "../utils/data";
+import areas from '../utils/areas';
 import { useEffect, useState, useCallback } from "react";
+import cn from 'classnames';
 
 export default function Mesto(props) {
   const authorized = localStorage.getItem("authorized")
@@ -43,9 +45,7 @@ export default function Mesto(props) {
   function handleSubmit(e) {
     e.preventDefault();
     setIsSubmit(true);
-    formValues.username = localStorage.getItem("userName")
-      ? localStorage.getItem("userName")
-      : formValues.username;
+    formValues.username = localStorage.getItem("userName") || formValues.username;
     localStorage.setItem(`adress-${id}`, JSON.stringify(formValues));
   }
 
@@ -69,7 +69,7 @@ export default function Mesto(props) {
       formValues.building > 0 && formValues.building < 100;
     if (!authorized) {
       inputIsValid.isValidName =
-        formValues.username.length > 2 && formValues.username.length < 25;
+        formValues.username.length > 9 && formValues.username.length < 25;
       inputIsValid.isValidEmail = formValues.email.length > 5;
     }
 
@@ -104,16 +104,12 @@ export default function Mesto(props) {
           {authorized ? (
             <></>
           ) : (
-            <fieldset className="form__fieldset form__fieldset_userInfo">
+            <fieldset className="form__fieldset">
               <div className="form__household-align">
                 <label className="form__input-label">
                   Имя*
                   <input
-                    className={
-                      inputIsValid.isValidName
-                        ? "form__input form__input_type_name"
-                        : "form__input form__input_type_name form__input_type_error"
-                    }
+                    className={cn('form__input', 'form__input_type_name', {'form__input_type_error': !inputIsValid.isValidName})}
                     type="text"
                     name="username"
                     value={username}
@@ -134,11 +130,7 @@ export default function Mesto(props) {
               <label className="form__input-label">
                 E-mail*
                 <input
-                  className={
-                    inputIsValid.isValidEmail
-                      ? "form__input"
-                      : "form__input form__input_type_error"
-                  }
+                  className={cn("form__input", {'form__input_type_error': !inputIsValid.isValidEmail})}
                   type="email"
                   name="email"
                   value={email}
@@ -157,19 +149,7 @@ export default function Mesto(props) {
               name="area"
               value={area}
               onChange={handleInputChange}
-            >
-              <option>Восточный</option>
-              <option>Зеленоградский</option>
-              <option>Западный</option>
-              <option>Новомосковский</option>
-              <option>Северный</option>
-              <option>Северо-Восточный</option>
-              <option>Северо-Западный</option>
-              <option>Троицкий</option>
-              <option>Центральный</option>
-              <option>Юго-Восточный</option>
-              <option>Юго-Западный</option>
-              <option>Южный</option>
+            >{areas.map((area, i) => <option key={i} value={area}>{area}</option>)}
             </select>
             <label htmlFor="street" className="form__input-label">
               Адрес*
@@ -179,11 +159,7 @@ export default function Mesto(props) {
               placeholder="Начните вводить название"
               required
               id="street"
-              className={
-                inputIsValid.isValidStreet
-                  ? "form__input form__input_type_street"
-                  : "form__input form__input_type_street form__input_type_error"
-              }
+              className={cn('form__input', 'form__input_type_street', {'form__input_type_error': !inputIsValid.isValidStreet})}
               name="street"
               value={street}
               onChange={handleInputChange}
@@ -242,14 +218,10 @@ export default function Mesto(props) {
             ></textarea>
           </fieldset>
           <button
-            className={
-              isValid
-                ? "button button_theme_send"
-                : "button button_theme_send button_theme_disabled"
-            }
+            className={cn('button', 'button_theme_send', {'button_theme_disabled': !isValid})}
             type="submit"
             onClick={handleSubmit}
-            disabled={isValid ? false : true}
+            disabled={!isValid}
           >
             Отправить обращение
           </button>

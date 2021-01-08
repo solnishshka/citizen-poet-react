@@ -18,11 +18,7 @@ export default function Result(props) {
       adress !== ""
         ? `${adress.area} район, ${adress.street}, дом ${adress.building}, корпус ${adress.corp}`
         : "";
-    const userName = adress.username
-      ? adress.username
-      : localStorage.getItem("userName")
-      ? localStorage.getItem("userName")
-      : "";
+    const userName = adress.username || localStorage.getItem("userName") || "";
     const data = JSON.parse(localStorage.getItem(`quote-${i}`));
     result[i] = {
       quote: data.quote,

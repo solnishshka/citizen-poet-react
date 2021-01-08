@@ -24,7 +24,7 @@ export default function About(props) {
             обработать все обращения и поспособствовать решению всех проблем.
           </p>
         </div>
-        <div className="lead__information"></div>
+        <div className="lead__information" />
       </section>
       <section className="faces">
         <div className="faces__item">

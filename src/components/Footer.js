@@ -1,8 +1,7 @@
 import { Link, useRouteMatch } from "react-router-dom";
 
 export default function Footer(props) {
-  const { url, path } = useRouteMatch();
-  console.log(path);
+  const { url } = useRouteMatch();
 
   return (
     <footer className={url === "/" ?  "footer footer_theme_main" : "footer"}>

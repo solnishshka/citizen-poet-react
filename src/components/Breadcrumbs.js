@@ -1,20 +1,19 @@
 import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
+import cn from 'classnames';
 
 export default function Breadcrumbs(props) {
   let res = "";
   const crumbs = props.url
     .split("/")
     .map((item) => {
-      return "/" + item;
+      return `/${item}`;
     })
     .map((crumb, i) => {
       if (i === 0) {
         return "/";
-      } else if (i === 1) {
-        res += crumb;
-        return res;
       } else {
-        res += crumb;
+        res = `${res}${crumb}`;
         return res;
       }
     });
@@ -38,22 +37,14 @@ export default function Breadcrumbs(props) {
       </Link>
     );
   } else {
-    return (
-      <>
-        {crumbs.map((url, i) => (
-          <Link
-            className={
-              i === crumbs.length - 1
-                ? "breadcrumbs breadcrumbs_active"
-                : "breadcrumbs breadcrumbs_inactive"
-            }
-            key={i}
-            to={url}
-          >
-            {props.title[i]}
-          </Link>
-        ))}
-      </>
-    );
+    return crumbs.map((url, i) => (
+      <Link
+        className={cn('breadcrumbs', {'breadcrumbs_active': i === crumbs.length - 1}, {'breadcrumbs_inactive': i !== crumbs.length - 1})}
+        key={uuidv4()}
+        to={url}
+      >
+        {props.title[i]}
+      </Link>
+    ))
   }
 }

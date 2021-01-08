@@ -1,54 +1,42 @@
 import { Link } from "react-router-dom";
+import cn from 'classnames';
+import { v4 as uuidv4 } from 'uuid';
 
-export default function Card(props) {
+export default function Card({ id, cardText, cardLink, isCardQuotes, isCardCategory, isActive, children, className, onClick }) {
   const card = {
-    id: props.id,
-    text: props.cardText,
+    id: id,
+    text: cardText,
   };
 
   function handleClickCard() {
-    if (props.onClick) {
-      props.onClick(props.isActive, card.id, card.text);
+    if (onClick) {
+      onClick(isActive, card.id, card.text);
     }
   }
 
   return (
-    <>
       <Link
-        to={props.cardLink}
-        className={
-          props.cardClassName
-            ? props.isActive
-              ? "card card_active " + props.cardClassName
-              : "card " + props.cardClassName
-            : "card"
-        }
+        to={cardLink}
+        className={cn('card', {'card_type_quotes': isCardQuotes}, {'card_active': isActive && isCardQuotes})}
         onClick={handleClickCard}
       >
         <div
-          className={
-            props.titleItemClass ? props.titleItemClass : "card__title-item"
-          }
+          className={cn('card__title-item', {"card__title-item_theme_categories": isCardCategory})}
         >
-          {props.children}
+          {children}
         </div>
         {card.text ? (
-          card.text.map((text, i) => (
+          card.text.map((text) => (
             <p
-              className={
-                props.isActive
-                  ? `${props.className} + card__description_active`
-                  : props.className
-              }
-              key={i}
+              className={cn(className, {'card__description_active': isActive})}
+              key={uuidv4()}
             >
               {text}
             </p>
           ))
         ) : (
-          <p></p>
+          <p />
         )}
       </Link>
-    </>
   );
 }

@@ -1,21 +1,20 @@
 import icon from "../images/form-icon.png";
 import { useState, useEffect } from "react";
+import cn from 'classnames';
 
 export default function Cabinet(props) {
   const [authorized, setAuthorized] = useState(
-    localStorage.getItem("authorized") ? true : false
+    Boolean(localStorage.getItem("authorized"))
   );
 
   const [name, setName] = useState(
-    localStorage.getItem("userName") ? localStorage.getItem("userName") : ""
+    localStorage.getItem("userName") || ""
   );
   const [surname, setSurname] = useState(
-    localStorage.getItem("userSurname")
-      ? localStorage.getItem("userSurname")
-      : ""
+    localStorage.getItem("userSurname") || ""
   );
   const [email, setEmail] = useState(
-    localStorage.getItem("userEmail") ? localStorage.getItem("userEmail") : ""
+    localStorage.getItem("userEmail") || ""
   );
   const [isValid, setIsValid] = useState(false);
 
@@ -128,7 +127,7 @@ export default function Cabinet(props) {
                   : "button button_theme_save button_theme_disabled"
               }
               type="submit"
-              disabled={isValid ? false : true}
+              disabled={!isValid}
             >
               Сохранить
             </button>
@@ -167,7 +166,7 @@ export default function Cabinet(props) {
                 name="userName"
                 placeholder="Иван"
                 id="userName"
-                value={name ? name : ""}
+                value={name || ""}
                 onChange={handleChangeName}
               />
             </label>
@@ -182,7 +181,7 @@ export default function Cabinet(props) {
                 name="userSurname"
                 placeholder="Иванов"
                 id="userSurname"
-                value={surname ? surname : ""}
+                value={surname || ""}
                 onChange={handleChangeSurname}
               />
             </label>
@@ -200,18 +199,14 @@ export default function Cabinet(props) {
                 placeholder="email@yandex.ru"
                 id="userEmail"
                 onChange={handleChangeEmail}
-                value={email ? email : ""}
+                value={email || ""}
               />
             </p>
           </label>
           <button
-            className={
-              isValid
-                ? "button button_theme_register"
-                : "button button_theme_register button_theme_disabled"
-            }
+            className={cn('button button_theme_register', {'button_theme_disabled': !isValid})}
             type="submit"
-            disabled={isValid ? false : true}
+            disabled={!isValid}
           >
             Зарегистрироваться
           </button>

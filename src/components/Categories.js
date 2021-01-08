@@ -9,7 +9,7 @@ export default function Categories(props) {
   return (
     <main className="content">
       <PageTemplate
-        navLink={"/"}
+        navLink='/'
         navLinkText={crumbs}
         title={"1. Выберите категорию проблемы"}
         progressBar={qImage}
@@ -17,16 +17,15 @@ export default function Categories(props) {
       <section className="table">
         {config.map((item) => (
           <Card
-            titleItemClass={
-              "card__title-item card__title-item_theme_categories"
-            }
-            className={"card__description"}
+            isCardCategory={true}
+            className="card__description"
             cardLink={`/categories/${item.name}`}
             cardTitle={item.title}
             cardImage={item.image}
             cardText={item.description}
             card={item}
             key={item.id}
+            isCardQuotes={false}
           >
             <h2 className="card__title">{item.title}</h2>
             <img className="card__image" src={item.image} alt="" />

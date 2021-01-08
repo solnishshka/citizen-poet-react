@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import config from "../utils/data";
 import { useRouteMatch, useParams } from "react-router-dom";
+import Api from '../utils/api';
+import cn from 'classnames';
 
 export default function Quotes(props) {
   let id = localStorage.getItem("quote-id")
@@ -28,13 +30,10 @@ export default function Quotes(props) {
     subCat: subCat,
   });
 
+  const api = new Api(`https://buymebuyme.xyz?q=%20${query}%20`);
+
   useEffect(() => {
-    fetch(`https://buymebuyme.xyz?q=%20${query}%20`)
-      .then((result) => {
-        if (result.ok) {
-          return result.json();
-        } else return Promise.reject(`Что-то пошло не так: ${result.status}`);
-      })
+    api.getQuotes()
       .then((data) => {
         setQuotes(data);
       })
@@ -100,11 +99,12 @@ export default function Quotes(props) {
             cardLink="#"
             key={i}
             id={i}
-            className={"card__description card__description_theme_quotes"}
-            cardClassName={"card_type_quotes"}
+            className="card__description card__description_theme_quotes"
+            isCardQuotes={true}
             cardText={item}
             onClick={handleClickCard}
             isActive={i === activeCard.id ? true : false}
+            isCardCategory={false}
           />
         ))}
       </section>
@@ -113,12 +113,8 @@ export default function Quotes(props) {
           <button
             onClick={handleSubmit}
             type="button"
-            className={
-              isDisabled
-                ? "button button_theme_disabled button_theme_apply"
-                : "button button_theme_apply"
-            }
-            disabled={isDisabled ? true : false}
+            className={cn('button', 'button_theme_apply', {'button_theme_disabled': isDisabled})}
+            disabled={isDisabled}
           >
             Подтвердить
           </button>
