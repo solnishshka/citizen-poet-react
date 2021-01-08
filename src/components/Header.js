@@ -1,4 +1,3 @@
-import logo from "../images/logo.svg";
 import Logo from '../components/Logo';
 import searchIcon from "../images/search.png";
 import { Link } from "react-router-dom";
@@ -8,7 +7,6 @@ export default function Header(props) {
     <header className="header">
       <Link to="/">
         <Logo />
-        {/* <img className="header__logo" src={logo} alt="" /> */}
       </Link>
       <nav className="header__menu">
         <ul className="header__menu-items">
